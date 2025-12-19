@@ -26,7 +26,6 @@
 
     /* Path mapping - Using baseUrl for now, will migrate in TS 7.0 */
     "ignoreDeprecations": "5.0",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
