@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Alert, AlertDescription, AlertTitle, AlertCircle } from './Alert';
+import { Alert, AlertDescription, AlertTitle } from './Alert';
+import { Icon, AlertCircle } from '@/components/Icon';
 
 /**
  * Displays a callout for user attention.
@@ -26,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Alert className="w-[652px]">
-      <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
+      <Icon icon={AlertCircle} size={20} className="mt-0.5" />
       <div className="flex flex-col gap-1">
         <AlertTitle>Alert Title</AlertTitle>
         <AlertDescription>
@@ -40,7 +41,7 @@ export const Default: Story = {
 export const Destructive: Story = {
   render: () => (
     <Alert variant="destructive" className="w-[652px]">
-      <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
+      <Icon icon={AlertCircle} size={20} className="mt-0.5" />
       <div className="flex flex-col gap-1">
         <AlertTitle>Alert Title</AlertTitle>
         <AlertDescription>
@@ -67,7 +68,7 @@ export const WithoutIcon: Story = {
 export const Simple: Story = {
   render: () => (
     <Alert className="w-[652px]">
-      <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
+      <Icon icon={AlertCircle} size={20} className="mt-0.5" />
       <div className="flex flex-col gap-1">
         <AlertTitle>Hello World</AlertTitle>
         <AlertDescription>Some description of the alert</AlertDescription>
