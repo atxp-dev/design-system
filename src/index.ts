@@ -1,4 +1,5 @@
 // Components
+export * from './components/Accordion';
 export * from './components/Badge';
 
 // Utilities
