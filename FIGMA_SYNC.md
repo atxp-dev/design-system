@@ -108,6 +108,7 @@ Follow these patterns:
 
 3. **Visual QA**:
    - Compare each updated component in Storybook side-by-side with Figma
+   - Use the embedded Figma designs in Storybook's Design tab (see "Embedding Figma in Storybook" below)
    - Test all variants, sizes, and states
    - Check responsive behavior
    - Verify accessibility (keyboard navigation, screen readers)
@@ -156,6 +157,68 @@ pnpm publish
 # Tag the release in git
 git tag v0.2.0
 git push origin v0.2.0
+```
+
+## Embedding Figma in Storybook
+
+This project uses `@storybook/addon-designs` to embed Figma designs directly in Storybook, making it easy to compare implementations with designs.
+
+### How It Works
+
+When you view a component story in Storybook, you'll see a "Design" tab in the addon panel that shows the corresponding Figma design embedded inline.
+
+### Adding Figma Embeds to Stories
+
+To embed a Figma design in a component story, add the `design` parameter to the story metadata:
+
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
+import { YourComponent } from './YourComponent';
+
+const meta = {
+  title: 'Components/YourComponent',
+  component: YourComponent,
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/nadcKNlrnZUHbbLwm9GdK4/C-C-Design-System---Components?node-id=2673-1675',
+    },
+  },
+} satisfies Meta<typeof YourComponent>;
+
+export default meta;
+```
+
+### Getting the Figma URL
+
+1. Open your Figma file
+2. Select the frame or component you want to embed
+3. Right-click and select "Copy link" (or use Cmd/Ctrl + L)
+4. Paste the URL into the `design.url` parameter
+
+### Benefits
+
+- **Side-by-side comparison**: View design and implementation together
+- **No context switching**: Designers and developers can review in one place
+- **Always up-to-date**: The embed shows the current state of the Figma design
+- **Works for anyone**: Collaborators can view based on their Figma permissions
+
+### Per-Story Overrides
+
+You can also add design embeds to individual stories instead of the entire component:
+
+```typescript
+export const Primary: Story = {
+  args: {
+    variant: 'primary',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/...?node-id=123-456',
+    },
+  },
+};
 ```
 
 ## Automated Checks

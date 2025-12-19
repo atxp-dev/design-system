@@ -12,6 +12,10 @@ const meta = {
   component: Badge,
   parameters: {
     layout: 'centered',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/nadcKNlrnZUHbbLwm9GdK4/C-C-Design-System---Components?node-id=2673-1675&m=dev',
+    },
   },
   tags: ['autodocs'],
   argTypes: {
