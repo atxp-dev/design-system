@@ -252,4 +252,9 @@ export {
   BarChart2,
   PieChart,
   LineChart,
+  BookOpen,
+  Pen,
+  Cog,
+  CheckCircle as CheckWaves, // Alias for indicator component
+  MoreHorizontal as Dots, // Alias for pagination ellipsis
 } from 'lucide-react';
