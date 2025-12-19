@@ -2,7 +2,10 @@
 export * from './components/Accordion';
 export * from './components/Alert';
 export * from './components/AlertDialog';
+export * from './components/Avatar';
 export * from './components/Badge';
+export * from './components/Breadcrumb';
+export * from './components/Button';
 export * from './components/Icon';
 
 // Utilities
