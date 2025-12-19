@@ -1,0 +1,14 @@
+@import './tokens.css';
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: var(--theme-border);
+  }
+
+  body {
+    background-color: var(--theme-background);
+    color: var(--theme-foreground);
+    font-family: var(--font-family-sans);
+  }
+}

@@ -1,0 +1,38 @@
+# Source files
+src/
+.storybook/
+
+# Config files
+tsconfig.json
+tsup.config.ts
+tailwind.config.js
+postcss.config.js
+eslint.config.js
+vite.config.ts
+
+# Development
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+
+# Build artifacts
+storybook-static/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Tests
+coverage/
+*.test.*
+*.spec.*
+
+# Documentation (keep README.md)
+docs/
+
+# Git
+.git/
+.gitignore
