@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import {
   Accordion,
   AccordionContent,
@@ -26,9 +26,8 @@ const meta = {
 } satisfies Meta<typeof Accordion>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default = {
   render: () => (
     <Accordion type="single" collapsible className="w-[612px]">
       <AccordionItem value="item-1">
@@ -42,7 +41,7 @@ export const Default: Story = {
   ),
 };
 
-export const Multiple: Story = {
+export const Multiple = {
   render: () => (
     <Accordion type="single" collapsible className="w-[612px]">
       <AccordionItem value="item-1">
@@ -70,7 +69,7 @@ export const Multiple: Story = {
   ),
 };
 
-export const MultipleOpen: Story = {
+export const MultipleOpen = {
   render: () => (
     <Accordion type="multiple" className="w-[612px]">
       <AccordionItem value="item-1">
@@ -88,7 +87,7 @@ export const MultipleOpen: Story = {
       <AccordionItem value="item-3">
         <AccordionTrigger>Is it animated?</AccordionTrigger>
         <AccordionContent>
-          Yes. It's animated by default with smooth expand/collapse transitions.
+          Yes. It&apos;s animated by default with smooth expand/collapse transitions.
         </AccordionContent>
       </AccordionItem>
     </Accordion>

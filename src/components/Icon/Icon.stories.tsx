@@ -31,7 +31,7 @@ export const Default: Story = {
   },
 };
 
-export const Sizes: Story = {
+export const Sizes = {
   render: () => (
     <div className="flex items-center gap-4">
       <Icon icon={Icons.Star} size={16} />
@@ -43,7 +43,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Colors: Story = {
+export const Colors = {
   render: () => (
     <div className="flex items-center gap-4">
       <Icon icon={Icons.Heart} className="text-foreground" />
@@ -55,7 +55,7 @@ export const Colors: Story = {
   ),
 };
 
-export const Navigation: Story = {
+export const Navigation = {
   render: () => (
     <div className="grid grid-cols-6 gap-4 p-4">
       <div className="flex flex-col items-center gap-2">
@@ -110,7 +110,7 @@ export const Navigation: Story = {
   ),
 };
 
-export const Actions: Story = {
+export const Actions = {
   render: () => (
     <div className="grid grid-cols-6 gap-4 p-4">
       <div className="flex flex-col items-center gap-2">
@@ -165,7 +165,7 @@ export const Actions: Story = {
   ),
 };
 
-export const Status: Story = {
+export const Status = {
   render: () => (
     <div className="grid grid-cols-6 gap-4 p-4">
       <div className="flex flex-col items-center gap-2">
@@ -196,7 +196,7 @@ export const Status: Story = {
   ),
 };
 
-export const AllCommonIcons: Story = {
+export const AllCommonIcons = {
   render: () => {
     const commonIcons = [
       'Home', 'User', 'Settings', 'Search', 'Star', 'Heart', 'Mail',
