@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils';
  * ```
  */
 
-export interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type InputGroupProps = React.HTMLAttributes<HTMLDivElement>;
 
 const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
   ({ className, ...props }, ref) => {
@@ -32,8 +32,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
 );
 InputGroup.displayName = 'InputGroup';
 
-export interface InputGroupLabelProps
-  extends React.LabelHTMLAttributes<HTMLLabelElement> {}
+export type InputGroupLabelProps = React.LabelHTMLAttributes<HTMLLabelElement>;
 
 const InputGroupLabel = React.forwardRef<
   HTMLLabelElement,
@@ -52,8 +51,7 @@ const InputGroupLabel = React.forwardRef<
 });
 InputGroupLabel.displayName = 'InputGroupLabel';
 
-export interface InputGroupHelpTextProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type InputGroupHelpTextProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 const InputGroupHelpText = React.forwardRef<
   HTMLParagraphElement,

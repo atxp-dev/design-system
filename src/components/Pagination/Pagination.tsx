@@ -12,7 +12,7 @@ import { Icon, ChevronLeft, ChevronRight, Dots } from '@/components/Icon';
  * @see https://ui.shadcn.com/docs/components/pagination
  */
 
-export interface PaginationProps extends React.HTMLAttributes<HTMLElement> {}
+export type PaginationProps = React.HTMLAttributes<HTMLElement>;
 
 const Pagination = React.forwardRef<HTMLElement, PaginationProps>(
   ({ className, ...props }, ref) => {
@@ -110,8 +110,7 @@ const PaginationLink = React.forwardRef<HTMLButtonElement, PaginationLinkProps>(
 );
 PaginationLink.displayName = 'PaginationLink';
 
-export interface PaginationEllipsisProps
-  extends React.HTMLAttributes<HTMLSpanElement> {}
+export type PaginationEllipsisProps = React.HTMLAttributes<HTMLSpanElement>;
 
 const PaginationEllipsis = React.forwardRef<
   HTMLSpanElement,

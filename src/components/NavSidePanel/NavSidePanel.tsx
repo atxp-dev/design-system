@@ -20,8 +20,7 @@ import { cn } from '@/lib/utils';
  * ```
  */
 
-export interface NavSidePanelProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavSidePanelProps = React.HTMLAttributes<HTMLDivElement>;
 
 const NavSidePanel = React.forwardRef<HTMLDivElement, NavSidePanelProps>(
   ({ className, ...props }, ref) => {
@@ -39,8 +38,7 @@ const NavSidePanel = React.forwardRef<HTMLDivElement, NavSidePanelProps>(
 );
 NavSidePanel.displayName = 'NavSidePanel';
 
-export interface NavSidePanelHeaderProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavSidePanelHeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
 const NavSidePanelHeader = React.forwardRef<
   HTMLDivElement,
@@ -56,8 +54,7 @@ const NavSidePanelHeader = React.forwardRef<
 });
 NavSidePanelHeader.displayName = 'NavSidePanelHeader';
 
-export interface NavSidePanelBrandProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavSidePanelBrandProps = React.HTMLAttributes<HTMLDivElement>;
 
 const NavSidePanelBrand = React.forwardRef<
   HTMLDivElement,
@@ -76,8 +73,7 @@ const NavSidePanelBrand = React.forwardRef<
 });
 NavSidePanelBrand.displayName = 'NavSidePanelBrand';
 
-export interface NavSidePanelSeparatorProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavSidePanelSeparatorProps = React.HTMLAttributes<HTMLDivElement>;
 
 const NavSidePanelSeparator = React.forwardRef<
   HTMLDivElement,
@@ -93,8 +89,7 @@ const NavSidePanelSeparator = React.forwardRef<
 });
 NavSidePanelSeparator.displayName = 'NavSidePanelSeparator';
 
-export interface NavSidePanelNavProps
-  extends React.HTMLAttributes<HTMLElement> {}
+export type NavSidePanelNavProps = React.HTMLAttributes<HTMLElement>;
 
 const NavSidePanelNav = React.forwardRef<HTMLElement, NavSidePanelNavProps>(
   ({ className, ...props }, ref) => {
@@ -152,8 +147,7 @@ const NavSidePanelItem = React.forwardRef<
 });
 NavSidePanelItem.displayName = 'NavSidePanelItem';
 
-export interface NavSidePanelFooterProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavSidePanelFooterProps = React.HTMLAttributes<HTMLDivElement>;
 
 const NavSidePanelFooter = React.forwardRef<
   HTMLDivElement,

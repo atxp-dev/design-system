@@ -20,7 +20,7 @@ import { cn } from '@/lib/utils';
  * ```
  */
 
-export interface NavHeaderProps extends React.HTMLAttributes<HTMLElement> {}
+export type NavHeaderProps = React.HTMLAttributes<HTMLElement>;
 
 const NavHeader = React.forwardRef<HTMLElement, NavHeaderProps>(
   ({ className, ...props }, ref) => {
@@ -38,8 +38,7 @@ const NavHeader = React.forwardRef<HTMLElement, NavHeaderProps>(
 );
 NavHeader.displayName = 'NavHeader';
 
-export interface NavHeaderBrandProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavHeaderBrandProps = React.HTMLAttributes<HTMLDivElement>;
 
 const NavHeaderBrand = React.forwardRef<HTMLDivElement, NavHeaderBrandProps>(
   ({ className, ...props }, ref) => {
@@ -54,7 +53,7 @@ const NavHeaderBrand = React.forwardRef<HTMLDivElement, NavHeaderBrandProps>(
 );
 NavHeaderBrand.displayName = 'NavHeaderBrand';
 
-export interface NavHeaderNavProps extends React.HTMLAttributes<HTMLElement> {}
+export type NavHeaderNavProps = React.HTMLAttributes<HTMLElement>;
 
 const NavHeaderNav = React.forwardRef<HTMLElement, NavHeaderNavProps>(
   ({ className, ...props }, ref) => {
@@ -118,8 +117,7 @@ const NavHeaderItem = React.forwardRef<HTMLButtonElement, NavHeaderItemProps>(
 );
 NavHeaderItem.displayName = 'NavHeaderItem';
 
-export interface NavHeaderDividerProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavHeaderDividerProps = React.HTMLAttributes<HTMLDivElement>;
 
 const NavHeaderDivider = React.forwardRef<
   HTMLDivElement,

@@ -38,7 +38,7 @@ export const WithHelpText: Story = {
     <InputGroup className="w-[340px]">
       <InputGroupLabel htmlFor="email">Email</InputGroupLabel>
       <Input id="email" type="email" placeholder="Enter your email" />
-      <InputGroupHelpText>We'll never share your email with anyone.</InputGroupHelpText>
+      <InputGroupHelpText>We&apos;ll never share your email with anyone.</InputGroupHelpText>
     </InputGroup>
   ),
 };
@@ -54,7 +54,7 @@ export const MultipleFields: Story = {
       <InputGroup>
         <InputGroupLabel htmlFor="email">Email</InputGroupLabel>
         <Input id="email" type="email" placeholder="Enter email" />
-        <InputGroupHelpText>We'll send a confirmation email.</InputGroupHelpText>
+        <InputGroupHelpText>We&apos;ll send a confirmation email.</InputGroupHelpText>
       </InputGroup>
       <InputGroup>
         <InputGroupLabel htmlFor="password">Password</InputGroupLabel>

@@ -117,29 +117,31 @@ export const WithLabels: Story = {
   ),
 };
 
-export const Animated: Story = {
-  render: () => {
-    const [progress, setProgress] = useState(0);
+const AnimatedProgressDemo = () => {
+  const [progress, setProgress] = useState(0);
 
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= 100) return 0;
-          return prev + 10;
-        });
-      }, 500);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 0;
+        return prev + 10;
+      });
+    }, 500);
 
-      return () => clearInterval(timer);
-    }, []);
+    return () => clearInterval(timer);
+  }, []);
 
-    return (
-      <div className="flex w-[296px] flex-col gap-2">
-        <div className="flex justify-between text-sm font-medium">
-          <span>Loading...</span>
-          <span>{progress}%</span>
-        </div>
-        <Progress value={progress} />
+  return (
+    <div className="flex w-[296px] flex-col gap-2">
+      <div className="flex justify-between text-sm font-medium">
+        <span>Loading...</span>
+        <span>{progress}%</span>
       </div>
-    );
-  },
+      <Progress value={progress} />
+    </div>
+  );
+};
+
+export const Animated: Story = {
+  render: () => <AnimatedProgressDemo />,
 };

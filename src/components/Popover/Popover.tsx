@@ -21,7 +21,7 @@ import { cn } from '@/lib/utils';
  * ```
  */
 
-export interface PopoverProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type PopoverProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
   ({ className, ...props }, ref) => {
@@ -39,8 +39,7 @@ const Popover = React.forwardRef<HTMLDivElement, PopoverProps>(
 );
 Popover.displayName = 'Popover';
 
-export interface PopoverHeaderProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type PopoverHeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
 const PopoverHeader = React.forwardRef<HTMLDivElement, PopoverHeaderProps>(
   ({ className, ...props }, ref) => {
@@ -55,8 +54,7 @@ const PopoverHeader = React.forwardRef<HTMLDivElement, PopoverHeaderProps>(
 );
 PopoverHeader.displayName = 'PopoverHeader';
 
-export interface PopoverTitleProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type PopoverTitleProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 const PopoverTitle = React.forwardRef<
   HTMLParagraphElement,
@@ -75,8 +73,7 @@ const PopoverTitle = React.forwardRef<
 });
 PopoverTitle.displayName = 'PopoverTitle';
 
-export interface PopoverDescriptionProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type PopoverDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 const PopoverDescription = React.forwardRef<
   HTMLParagraphElement,

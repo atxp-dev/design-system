@@ -13,7 +13,7 @@ import { Icon, Check, ChevronRight } from '@/components/Icon';
  * @see https://ui.shadcn.com/docs/components/menubar
  */
 
-export interface MenubarProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type MenubarProps = React.HTMLAttributes<HTMLDivElement>;
 
 const Menubar = React.forwardRef<HTMLDivElement, MenubarProps>(
   ({ className, ...props }, ref) => {
@@ -63,8 +63,7 @@ const MenubarTrigger = React.forwardRef<HTMLButtonElement, MenubarTriggerProps>(
 );
 MenubarTrigger.displayName = 'MenubarTrigger';
 
-export interface MenubarDropdownProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type MenubarDropdownProps = React.HTMLAttributes<HTMLDivElement>;
 
 const MenubarDropdown = React.forwardRef<HTMLDivElement, MenubarDropdownProps>(
   ({ className, ...props }, ref) => {
@@ -154,8 +153,7 @@ const MenubarItem = React.forwardRef<HTMLButtonElement, MenubarItemProps>(
 );
 MenubarItem.displayName = 'MenubarItem';
 
-export interface MenubarSeparatorProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type MenubarSeparatorProps = React.HTMLAttributes<HTMLDivElement>;
 
 const MenubarSeparator = React.forwardRef<HTMLDivElement, MenubarSeparatorProps>(
   ({ className, ...props }, ref) => {
@@ -170,8 +168,7 @@ const MenubarSeparator = React.forwardRef<HTMLDivElement, MenubarSeparatorProps>
 );
 MenubarSeparator.displayName = 'MenubarSeparator';
 
-export interface MenubarLabelProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type MenubarLabelProps = React.HTMLAttributes<HTMLDivElement>;
 
 const MenubarLabel = React.forwardRef<HTMLDivElement, MenubarLabelProps>(
   ({ className, ...props }, ref) => {

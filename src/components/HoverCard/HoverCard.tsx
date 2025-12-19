@@ -21,7 +21,7 @@ import { cn } from '@/lib/utils';
  * ```
  */
 
-export interface HoverCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type HoverCardProps = React.HTMLAttributes<HTMLDivElement>;
 
 const HoverCard = React.forwardRef<HTMLDivElement, HoverCardProps>(
   ({ className, ...props }, ref) => {
@@ -39,8 +39,7 @@ const HoverCard = React.forwardRef<HTMLDivElement, HoverCardProps>(
 );
 HoverCard.displayName = 'HoverCard';
 
-export interface HoverCardHeaderProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type HoverCardHeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
 const HoverCardHeader = React.forwardRef<HTMLDivElement, HoverCardHeaderProps>(
   ({ className, ...props }, ref) => {
@@ -55,8 +54,7 @@ const HoverCardHeader = React.forwardRef<HTMLDivElement, HoverCardHeaderProps>(
 );
 HoverCardHeader.displayName = 'HoverCardHeader';
 
-export interface HoverCardTitleProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type HoverCardTitleProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 const HoverCardTitle = React.forwardRef<
   HTMLParagraphElement,
@@ -75,8 +73,7 @@ const HoverCardTitle = React.forwardRef<
 });
 HoverCardTitle.displayName = 'HoverCardTitle';
 
-export interface HoverCardDescriptionProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type HoverCardDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 const HoverCardDescription = React.forwardRef<
   HTMLParagraphElement,
