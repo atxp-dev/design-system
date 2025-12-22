@@ -14,6 +14,7 @@ export * from './components/Dialog';
 export * from './components/Drawer';
 export * from './components/Header';
 export * from './components/Icon';
+export * from './components/Radio';
 
 // Utilities
 export { cn } from './lib/utils';
