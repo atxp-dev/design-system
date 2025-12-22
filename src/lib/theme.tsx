@@ -45,7 +45,7 @@ export interface ThemeProviderProps {
  *
  * @example
  * ```tsx
- * import { ThemeProvider } from '@circuitandchisel/design-system';
+ * import { ThemeProvider } from '@atxp/design-system';
  *
  * function App() {
  *   return (

@@ -1,6 +1,6 @@
 # Theme System
 
-Circuit & Chisel Design System supports multiple themes with easy runtime switching.
+ATXP Design System supports multiple themes with easy runtime switching.
 
 ## Available Themes
 
@@ -19,8 +19,8 @@ Circuit & Chisel Design System supports multiple themes with easy runtime switch
 The easiest way to use themes in a React application is with the `ThemeProvider`:
 
 ```tsx
-import { ThemeProvider } from '@circuitandchisel/design-system';
-import '@circuitandchisel/design-system/styles.css';
+import { ThemeProvider } from '@atxp/design-system';
+import '@atxp/design-system/styles.css';
 
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
 Access and control themes from any component:
 
 ```tsx
-import { useTheme } from '@circuitandchisel/design-system';
+import { useTheme } from '@atxp/design-system';
 
 function ThemeToggle() {
   const { theme, setTheme, actualTheme } = useTheme();
@@ -153,7 +153,7 @@ You can create custom themes by adding CSS with data attribute selectors:
 ### 2. Import your custom theme
 
 ```tsx
-import '@circuitandchisel/design-system/styles.css';
+import '@atxp/design-system/styles.css';
 import './custom-theme.css';
 ```
 
@@ -326,7 +326,7 @@ function App() {
 
 1. Ensure you've imported the styles:
    ```tsx
-   import '@circuitandchisel/design-system/styles.css';
+   import '@atxp/design-system/styles.css';
    ```
 
 2. Check that ThemeProvider wraps your app:

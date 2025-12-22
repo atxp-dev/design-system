@@ -1,6 +1,6 @@
 # Theme System Maintenance Guide
 
-Quick reference for maintaining themes in the Circuit & Chisel Design System.
+Quick reference for maintaining themes in the ATXP Design System.
 
 ## File Structure
 

@@ -2,7 +2,7 @@
   "name": "@atxp/design-system",
   "version": "0.1.2",
   "type": "module",
-  "description": "Circuit & Chisel Design System - React component library",
+  "description": "ATXP Design System - React component library",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -35,18 +35,18 @@
     "components",
     "design-system",
     "ui",
-    "circuit-and-chisel"
+    "atxp"
   ],
-  "author": "Circuit & Chisel",
+  "author": "ATXP",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/circuitandchisel/design-system.git"
+    "url": "https://github.com/atxp-dev/design-system.git"
   },
   "bugs": {
-    "url": "https://github.com/circuitandchisel/design-system/issues"
+    "url": "https://github.com/atxp-dev/design-system/issues"
   },
-  "homepage": "https://github.com/circuitandchisel/design-system#readme",
+  "homepage": "https://github.com/atxp-dev/design-system#readme",
   "sideEffects": false,
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",

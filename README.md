@@ -1,4 +1,4 @@
-# Circuit & Chisel Design System
+# ATXP Design System
 
 A React component library built with TypeScript, Tailwind CSS, and based on our Figma design system.
 
@@ -191,7 +191,7 @@ pnpm typecheck
 
 ## Syncing with Figma
 
-This design system is built from our Figma designs. When the design team updates components in Figma, follow this workflow to sync changes:
+This design system is built from Figma designs. When the design team updates components in Figma, follow this workflow to sync changes:
 
 ### Prerequisites
 

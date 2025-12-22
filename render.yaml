@@ -2,7 +2,7 @@ services:
 - type: web
   name: design-system-storybook
   runtime: static
-  repo: https://github.com/circuitandchisel/design-system
+  repo: https://github.com/atxp-dev/design-system
   buildCommand: pnpm install --frozen-lockfile && pnpm run build-storybook
   staticPublishPath: storybook-static
   autoDeployTrigger: commit

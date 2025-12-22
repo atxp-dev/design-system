@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils';
  *
  * @example
  * ```tsx
- * import { Icon } from '@circuitandchisel/design-system';
+ * import { Icon } from '@atxp/design-system';
  * import { AlertCircle } from 'lucide-react';
  *
  * <Icon icon={AlertCircle} />

@@ -1,6 +1,6 @@
-# Circuit & Chisel Design System - LLM Agent Quick Start Guide
+# ATXP Design System - LLM Agent Quick Start Guide
 
-**Purpose**: This guide helps LLM coding agents effectively use the Circuit & Chisel Design System to generate correct, accessible React components.
+**Purpose**: This guide helps LLM coding agents effectively use the ATXP Design System to generate correct, accessible React components.
 
 **Target Audience**: AI coding assistants, code generation tools, and LLM agents
 

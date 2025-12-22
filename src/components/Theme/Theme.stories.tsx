@@ -6,7 +6,7 @@ import { Badge } from '@/components/Badge';
 import { Alert } from '@/components/Alert';
 
 /**
- * The Circuit & Chisel Design System supports multiple themes with easy runtime switching.
+ * The ATXP Design System supports multiple themes with easy runtime switching.
  *
  * ## Available Themes
  * - **light** - Primary brand theme (default)
