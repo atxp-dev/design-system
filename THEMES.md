@@ -320,34 +320,6 @@ function App() {
 }
 ```
 
-## Migration Guide
-
-### From Hardcoded Colors
-
-If you have hardcoded colors in your application:
-
-**Before:**
-```tsx
-<div style={{ color: '#020618', background: '#ffffff' }}>
-```
-
-**After:**
-```tsx
-<div className="text-foreground bg-background">
-```
-
-Or use CSS variables directly:
-```css
-.my-class {
-  color: var(--theme-foreground);
-  background: var(--theme-background);
-}
-```
-
-### From Previous Version
-
-If you're upgrading from a version without theme support, the default theme is identical to the previous static colors, so no changes are required unless you want to enable theme switching.
-
 ## Troubleshooting
 
 ### Theme Not Applying
@@ -378,9 +350,3 @@ Add the theme script before React hydration (see "Prevent Flash of Wrong Theme" 
 1. Ensure your custom CSS is loaded after the design system styles
 2. Verify all required CSS variables are defined
 3. Check browser DevTools to confirm variables are being applied
-
-## Support
-
-For issues or questions about theming:
-- [GitHub Issues](https://github.com/circuitandchisel/design-system/issues)
-- Reference the base theme in `src/styles/tokens.css` for token definitions
