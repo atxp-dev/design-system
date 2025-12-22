@@ -82,7 +82,7 @@ const NavSidePanelSeparator = React.forwardRef<
   return (
     <div
       ref={ref}
-      className={cn('h-px w-full bg-[#beeaec]', className)}
+      className={cn('h-px w-full bg-accent-muted', className)}
       {...props}
     />
   );

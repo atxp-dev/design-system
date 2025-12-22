@@ -18,5 +18,8 @@ export * from './components/Icon';
 // Utilities
 export { cn } from './lib/utils';
 
+// Theme
+export { ThemeProvider, useTheme, type Theme, type ThemeProviderProps } from './lib/theme';
+
 // Styles - consumers need to import this separately
 // import '@circuitandchisel/design-system/styles.css'

@@ -12,10 +12,10 @@ import { Icon, Check } from '@/components/Icon';
 const indicatorDotVariants = cva('h-2.5 w-2.5 rounded-full', {
   variants: {
     status: {
-      high: 'bg-[#E76E50]',
-      medium: 'bg-[#E8C468]',
-      low: 'bg-[#00BC7D]',
-      info: 'bg-[#E76E50]',
+      high: 'bg-warning',
+      medium: 'bg-warning-alt',
+      low: 'bg-success',
+      info: 'bg-warning',
     },
   },
   defaultVariants: {
@@ -97,7 +97,7 @@ const IndicatorCircle = React.forwardRef<HTMLDivElement, IndicatorCircleProps>(
           <Icon
             icon={Check}
             size={20}
-            className="text-[#5DCBCF]"
+            className="text-info"
             strokeWidth={2}
           />
         )}
@@ -114,12 +114,12 @@ const IndicatorCircle = React.forwardRef<HTMLDivElement, IndicatorCircleProps>(
               cx="10"
               cy="10"
               r="6.5"
-              stroke="#E2E8F0"
+              stroke="var(--theme-muted-foreground)"
               strokeWidth="1.5"
             />
             <path
               d="M 10,3.5 A 6.5,6.5 0 0,1 16.5,10"
-              stroke="#5DCBCF"
+              stroke="var(--theme-info)"
               strokeWidth="1.5"
               strokeLinecap="round"
               fill="none"
@@ -139,7 +139,7 @@ const IndicatorCircle = React.forwardRef<HTMLDivElement, IndicatorCircleProps>(
               cx="10"
               cy="10"
               r="6.5"
-              stroke="#E2E8F0"
+              stroke="var(--theme-muted-foreground)"
               strokeWidth="1.5"
             />
           </svg>

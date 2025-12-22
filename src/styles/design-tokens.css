@@ -1,28 +1,12 @@
 /**
  * Design Tokens
- * Generated from Figma Design System
+ * Non-theme-specific design system tokens
+ *
+ * From Figma Design System
  * https://www.figma.com/design/nadcKNlrnZUHbbLwm9GdK4/C-C-Design-System---Components
  */
 
 :root {
-  /* Colors - Theme */
-  --theme-foreground: #020618;
-  --theme-background: #ffffff;
-  --theme-muted: #f1f5f9;
-  --theme-border: #bebcfc;
-
-  --theme-primary: #5d57f8;
-  --theme-primary-foreground: #f8fafc;
-
-  --theme-secondary: #f1f5f9;
-  --theme-secondary-foreground: #314158;
-
-  --theme-destructive: #e7000b;
-  --theme-destructive-foreground: #f8fafc;
-
-  --theme-success: #00bc7d;
-  --theme-success-background-fill: #ecfdf5;
-
   /* Colors - Purple Scale */
   --color-purple-600: #9810fa;
 
