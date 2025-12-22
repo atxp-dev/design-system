@@ -16,6 +16,33 @@ Quick reference for maintaining themes in the Circuit & Chisel Design System.
 
 ---
 
+## Adding/Updating Components
+
+**Figma File**: `nadcKNlrnZUHbbLwm9GdK4`
+
+1. **Fetch from Figma**:
+```tsx
+mcp__figma__get_design_context({
+  fileKey: "nadcKNlrnZUHbbLwm9GdK4",
+  nodeId: "XXXX-XXXX",  // From URL: ?node-id=2674-2166
+  clientLanguages: "typescript",
+  clientFrameworks: "react"
+})
+```
+
+2. **Create files** in `src/components/ComponentName/`:
+   - `ComponentName.tsx` - Component (use forwardRef, cn utility, native HTML + peer-state styling)
+   - `index.ts` - `export { ComponentName, type ComponentNameProps } from './ComponentName';`
+   - `ComponentName.stories.tsx` - Stories with Figma link in `design.url`
+
+3. **Export**: Add `export * from './components/ComponentName';` to `src/index.ts`
+
+4. **Test**: `pnpm exec tsc --noEmit && pnpm build && pnpm storybook`
+
+**Patterns**: Use native HTML elements, `.sr-only` for accessibility, `peer-*` modifiers for state styling, design tokens (`border-primary`, `bg-background`), avoid Radix UI unless complex state needed
+
+---
+
 ## Adding a New Theme
 
 1. **Fetch from Figma** (if applicable):
