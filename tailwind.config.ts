@@ -12,12 +12,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        border: 'var(--theme-border)',
+        border: {
+          DEFAULT: 'var(--theme-border)',
+          hover: 'var(--theme-border-hover)',
+        },
+        input: 'var(--theme-input)',
+        ring: 'var(--theme-ring)',
         background: 'var(--theme-background)',
         foreground: 'var(--theme-foreground)',
         primary: {
           DEFAULT: 'var(--theme-primary)',
           foreground: 'var(--theme-primary-foreground)',
+          hover: 'var(--theme-primary-hover)',
         },
         secondary: {
           DEFAULT: 'var(--theme-secondary)',
@@ -45,7 +51,34 @@ export default {
           foreground: 'var(--theme-muted-foreground)',
         },
         accent: {
+          DEFAULT: 'var(--theme-accent)',
+          foreground: 'var(--theme-accent-foreground)',
+          hover: 'var(--theme-accent-hover)',
           muted: 'var(--theme-accent-muted)',
+        },
+        card: {
+          DEFAULT: 'var(--theme-card)',
+          foreground: 'var(--theme-card-foreground)',
+        },
+        popover: {
+          DEFAULT: 'var(--theme-popover)',
+          foreground: 'var(--theme-popover-foreground)',
+        },
+        sidebar: {
+          background: 'var(--theme-sidebar-background)',
+          foreground: 'var(--theme-sidebar-foreground)',
+          primary: 'var(--theme-sidebar-primary)',
+          'primary-foreground': 'var(--theme-sidebar-primary-foreground)',
+          accent: 'var(--theme-sidebar-accent)',
+          'accent-foreground': 'var(--theme-sidebar-accent-foreground)',
+          border: 'var(--theme-sidebar-border)',
+        },
+        chart: {
+          '1': 'var(--theme-chart-1)',
+          '2': 'var(--theme-chart-2)',
+          '3': 'var(--theme-chart-3)',
+          '4': 'var(--theme-chart-4)',
+          '5': 'var(--theme-chart-5)',
         },
       },
       borderRadius: {

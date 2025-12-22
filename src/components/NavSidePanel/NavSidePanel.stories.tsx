@@ -9,6 +9,9 @@ import {
   NavSidePanelFooter,
 } from './NavSidePanel';
 import { Icon, Home, CheckWaves, Settings, LogOut } from '@/components/Icon';
+import { ThemeProvider, useTheme, Theme } from '@/lib/theme';
+import { Button } from '@/components/Button';
+import { Badge } from '@/components/Badge';
 
 /**
  * A vertical side navigation panel for application navigation.
@@ -31,6 +34,112 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+/**
+ * Theme Selector Component for testing NavSidePanel across themes
+ */
+function ThemeSelector() {
+  const { theme, setTheme, actualTheme } = useTheme();
+  const themes: Theme[] = ['light', 'dark', 'atxp', 'dbg'];
+
+  return (
+    <div className="bg-background p-4 border-b border-border">
+      <div className="max-w-screen-xl">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-foreground">Theme:</span>
+            {themes.map((t) => (
+              <Button
+                key={t}
+                size="sm"
+                variant={theme === t ? 'default' : 'outline'}
+                onClick={() => setTheme(t)}
+              >
+                {t.charAt(0).toUpperCase() + t.slice(1)}
+              </Button>
+            ))}
+          </div>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span>Active:</span>
+            <Badge variant="secondary">{actualTheme}</Badge>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Interactive theme tester - Test the NavSidePanel across all themes
+ * Click the theme buttons at the top to see how the selected state appears in each theme
+ */
+export const ThemeTester: Story = {
+  render: () => (
+    <ThemeProvider defaultTheme="light">
+      <div className="min-h-screen bg-background">
+        <ThemeSelector />
+        <div className="flex gap-8 p-8">
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              With Icons and Selected State
+            </h3>
+            <NavSidePanel className="h-screen">
+              <div>
+                <NavSidePanelHeader>
+                  <NavSidePanelBrand>ToothChat</NavSidePanelBrand>
+                  <NavSidePanelSeparator />
+                </NavSidePanelHeader>
+                <NavSidePanelNav>
+                  <NavSidePanelItem
+                    selected
+                    icon={<Icon icon={Home} size={24} />}
+                  >
+                    Dashboard
+                  </NavSidePanelItem>
+                  <NavSidePanelSeparator />
+                  <NavSidePanelItem icon={<Icon icon={CheckWaves} size={20} />}>
+                    Verifications
+                  </NavSidePanelItem>
+                </NavSidePanelNav>
+              </div>
+              <NavSidePanelFooter>
+                <NavSidePanelItem icon={<Icon icon={Settings} size={20} />}>
+                  Settings
+                </NavSidePanelItem>
+                <NavSidePanelSeparator />
+                <NavSidePanelItem icon={<Icon icon={LogOut} size={20} />}>
+                  Logout
+                </NavSidePanelItem>
+              </NavSidePanelFooter>
+            </NavSidePanel>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Simple Text Links
+            </h3>
+            <NavSidePanel className="h-96">
+              <div>
+                <NavSidePanelHeader>
+                  <NavSidePanelBrand>App</NavSidePanelBrand>
+                  <NavSidePanelSeparator />
+                </NavSidePanelHeader>
+                <NavSidePanelNav>
+                  <NavSidePanelItem selected>Home</NavSidePanelItem>
+                  <NavSidePanelItem>Projects</NavSidePanelItem>
+                  <NavSidePanelItem>Team</NavSidePanelItem>
+                </NavSidePanelNav>
+              </div>
+              <NavSidePanelFooter>
+                <NavSidePanelItem>Settings</NavSidePanelItem>
+              </NavSidePanelFooter>
+            </NavSidePanel>
+          </div>
+        </div>
+      </div>
+    </ThemeProvider>
+  ),
+};
 
 export const Default: Story = {
   render: () => (

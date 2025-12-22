@@ -58,6 +58,22 @@
 
   /* Primary Hover */
   --theme-primary-hover: #6b66ff;
+
+  /* Chart Colors */
+  --theme-chart-1: #ff6b6b;
+  --theme-chart-2: #10d9a0;
+  --theme-chart-3: #4a5f7a;
+  --theme-chart-4: #ffd93d;
+  --theme-chart-5: #ff9f43;
+
+  /* Sidebar */
+  --theme-sidebar-background: #0f172a;
+  --theme-sidebar-foreground: #cbd5e1;
+  --theme-sidebar-primary: #f8fafc;
+  --theme-sidebar-primary-foreground: #020618;
+  --theme-sidebar-accent: #1e293b;
+  --theme-sidebar-accent-foreground: #f8fafc;
+  --theme-sidebar-border: #4c4799;
 }
 
 /**
@@ -121,5 +137,21 @@
 
     /* Primary Hover */
     --theme-primary-hover: #6b66ff;
+
+    /* Chart Colors */
+    --theme-chart-1: #ff6b6b;
+    --theme-chart-2: #10d9a0;
+    --theme-chart-3: #4a5f7a;
+    --theme-chart-4: #ffd93d;
+    --theme-chart-5: #ff9f43;
+
+    /* Sidebar */
+    --theme-sidebar-background: #0f172a;
+    --theme-sidebar-foreground: #cbd5e1;
+    --theme-sidebar-primary: #f8fafc;
+    --theme-sidebar-primary-foreground: #020618;
+    --theme-sidebar-accent: #1e293b;
+    --theme-sidebar-accent-foreground: #f8fafc;
+    --theme-sidebar-border: #4c4799;
   }
 }
