@@ -1,4 +1,12 @@
-@import './tokens.css';
+/* Design Tokens - Non-theme-specific tokens */
+@import './design-tokens.css';
+
+/* Theme Files */
+@import './themes/light.css';
+@import './themes/dark.css';
+@import './themes/atxp.css';
+@import './themes/dbg.css';
+
 @import "tailwindcss";
 
 @theme {
