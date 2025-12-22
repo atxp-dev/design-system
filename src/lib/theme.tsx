@@ -3,7 +3,7 @@ import * as React from 'react';
 /**
  * Available theme options
  */
-export type Theme = 'light' | 'dark' | 'ocean' | 'forest' | 'auto';
+export type Theme = 'light' | 'dark' | 'atxp' | 'dbg' | 'auto';
 
 /**
  * Theme context value
@@ -11,7 +11,7 @@ export type Theme = 'light' | 'dark' | 'ocean' | 'forest' | 'auto';
 interface ThemeContextValue {
   theme: Theme;
   setTheme: (theme: Theme) => void;
-  actualTheme: 'light' | 'dark' | 'ocean' | 'forest';
+  actualTheme: 'light' | 'dark' | 'atxp' | 'dbg';
 }
 
 const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
@@ -75,7 +75,7 @@ export function ThemeProvider({
     return defaultTheme;
   });
 
-  const [actualTheme, setActualTheme] = React.useState<'light' | 'dark' | 'ocean' | 'forest'>(() => {
+  const [actualTheme, setActualTheme] = React.useState<'light' | 'dark' | 'atxp' | 'dbg'>(() => {
     if (theme === 'auto') {
       return typeof window !== 'undefined' &&
              window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -180,5 +180,5 @@ export function useTheme() {
  * Type guard to check if a string is a valid theme
  */
 function isValidTheme(value: string): value is Theme {
-  return ['light', 'dark', 'ocean', 'forest', 'auto'].includes(value);
+  return ['light', 'dark', 'atxp', 'dbg', 'auto'].includes(value);
 }

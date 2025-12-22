@@ -2,36 +2,60 @@
  * Design Tokens
  * Multi-Theme System
  *
- * Base theme from Figma Design System
+ * Themes from Figma Design System
  * https://www.figma.com/design/nadcKNlrnZUHbbLwm9GdK4/C-C-Design-System---Components
  *
  * Theme Usage:
- * - Default: Light theme (no attribute needed)
+ * - Default: Primary theme (no attribute needed)
  * - Dark mode: <html data-theme="dark">
- * - Brand variants: <html data-theme="ocean">, <html data-theme="forest">
+ * - ATXP brand: <html data-theme="atxp">
+ * - DBG brand: <html data-theme="dbg">
  * - Auto dark mode: Automatically applies dark theme if user prefers dark color scheme
  */
 
 /* ============================================
-   DEFAULT THEME (LIGHT)
+   DEFAULT THEME (PRIMARY)
+   Figma: node-id=4800-7262
    ============================================ */
 :root {
-  /* Colors - Theme */
+  /* Base Colors */
   --theme-foreground: #020618;
   --theme-background: #ffffff;
   --theme-muted: #f1f5f9;
+  --theme-muted-foreground: #62748e;
   --theme-border: #bebcfc;
+  --theme-border-hover: #9e9afb;
+  --theme-input: #e2e8f0;
+  --theme-ring: #020618;
 
+  /* Primary Colors */
   --theme-primary: #5d57f8;
+  --theme-primary-hover: #5751e2;
   --theme-primary-foreground: #f8fafc;
 
+  /* Secondary Colors */
   --theme-secondary: #f1f5f9;
   --theme-secondary-foreground: #314158;
 
+  /* Accent Colors */
+  --theme-accent: #efeefe;
+  --theme-accent-hover: #dfddfe;
+  --theme-accent-foreground: #0f172b;
+  --theme-accent-muted: #beeaec;
+
+  /* Card */
+  --theme-card: #ffffff;
+  --theme-card-foreground: #020618;
+
+  /* Popover */
+  --theme-popover: #ffffff;
+  --theme-popover-foreground: #020618;
+
+  /* Semantic Colors */
   --theme-destructive: #e7000b;
   --theme-destructive-foreground: #f8fafc;
 
-  --theme-success: #00bc7d;
+  --theme-success: #2a9d90;
   --theme-success-background-fill: #ecfdf5;
 
   --theme-warning: #e76e50;
@@ -41,8 +65,21 @@
   --theme-info: #5dcbcf;
   --theme-info-foreground: #f8fafc;
 
-  --theme-muted-foreground: #e2e8f0;
-  --theme-accent-muted: #beeaec;
+  /* Chart Colors */
+  --theme-chart-1: #e76e50;
+  --theme-chart-2: #2a9d90;
+  --theme-chart-3: #274754;
+  --theme-chart-4: #e8c468;
+  --theme-chart-5: #f4a462;
+
+  /* Sidebar */
+  --theme-sidebar-background: #f8fafc;
+  --theme-sidebar-foreground: #314158;
+  --theme-sidebar-primary: #0f172b;
+  --theme-sidebar-primary-foreground: #f8fafc;
+  --theme-sidebar-accent: #f1f5f9;
+  --theme-sidebar-accent-foreground: #0f172b;
+  --theme-sidebar-border: #bebcfc;
 
   /* Colors - Purple Scale */
   --color-purple-600: #9810fa;
@@ -128,79 +165,143 @@
 }
 
 /* ============================================
-   BRAND THEME: OCEAN
-   Example of a brand-specific color scheme
+   ATXP BRAND THEME
+   Figma: node-id=4800-7424
+   Professional black primary with blue accents
    ============================================ */
-[data-theme="ocean"] {
+[data-theme="atxp"] {
   /* Base Colors */
-  --theme-foreground: #0a1929;
-  --theme-background: #f0f9ff;
-  --theme-muted: #e0f2fe;
-  --theme-border: #7dd3fc;
+  --theme-foreground: #020618;
+  --theme-background: #ffffff;
+  --theme-muted: #f1f5f9;
+  --theme-muted-foreground: #90a1b9;
+  --theme-border: #90a1b9;
+  --theme-border-hover: #62748e;
+  --theme-input: #e2e8f0;
+  --theme-ring: #020618;
 
-  /* Primary Colors - Ocean Blue */
-  --theme-primary: #0284c7;
-  --theme-primary-foreground: #ffffff;
+  /* Primary Colors - Black */
+  --theme-primary: #000000;
+  --theme-primary-hover: #0f172b;
+  --theme-primary-foreground: #f8fafc;
 
   /* Secondary Colors */
-  --theme-secondary: #e0f2fe;
-  --theme-secondary-foreground: #075985;
+  --theme-secondary: #f1f5f9;
+  --theme-secondary-foreground: #314158;
+
+  /* Accent Colors - Blue */
+  --theme-accent: #dbeafe;
+  --theme-accent-hover: #bedbff;
+  --theme-accent-foreground: #0f172b;
+  --theme-accent-muted: #beeaec;
+
+  /* Card */
+  --theme-card: #ffffff;
+  --theme-card-foreground: #020618;
+
+  /* Popover */
+  --theme-popover: #ffffff;
+  --theme-popover-foreground: #020618;
 
   /* Semantic Colors */
-  --theme-destructive: #dc2626;
-  --theme-destructive-foreground: #ffffff;
+  --theme-destructive: #e7000b;
+  --theme-destructive-foreground: #f8fafc;
 
-  --theme-success: #059669;
-  --theme-success-background-fill: #d1fae5;
+  --theme-success: #2a9d90;
+  --theme-success-background-fill: #ecfdf5;
 
-  --theme-warning: #ea580c;
-  --theme-warning-foreground: #ffffff;
-  --theme-warning-alt: #f59e0b;
+  --theme-warning: #e76e50;
+  --theme-warning-foreground: #f8fafc;
+  --theme-warning-alt: #e8c468;
 
-  --theme-info: #06b6d4;
-  --theme-info-foreground: #ffffff;
+  --theme-info: #5dcbcf;
+  --theme-info-foreground: #f8fafc;
 
-  /* Muted Colors */
-  --theme-muted-foreground: #bae6fd;
-  --theme-accent-muted: #cffafe;
+  /* Chart Colors */
+  --theme-chart-1: #e76e50;
+  --theme-chart-2: #2a9d90;
+  --theme-chart-3: #274754;
+  --theme-chart-4: #e8c468;
+  --theme-chart-5: #f4a462;
+
+  /* Sidebar */
+  --theme-sidebar-background: #f8fafc;
+  --theme-sidebar-foreground: #314158;
+  --theme-sidebar-primary: #0f172b;
+  --theme-sidebar-primary-foreground: #f8fafc;
+  --theme-sidebar-accent: #f1f5f9;
+  --theme-sidebar-accent-foreground: #0f172b;
+  --theme-sidebar-border: #90a1b9;
 }
 
 /* ============================================
-   BRAND THEME: FOREST
-   Another example brand variation
+   DBG BRAND THEME
+   Figma: node-id=2984-2314
+   Cyan/turquoise primary with fresh, modern aesthetic
    ============================================ */
-[data-theme="forest"] {
+[data-theme="dbg"] {
   /* Base Colors */
-  --theme-foreground: #14532d;
-  --theme-background: #f7fee7;
-  --theme-muted: #ecfccb;
-  --theme-border: #a3e635;
+  --theme-foreground: #020618;
+  --theme-background: #ffffff;
+  --theme-muted: #f1f5f9;
+  --theme-muted-foreground: #90a1b9;
+  --theme-border: #beeaec;
+  --theme-border-hover: #a0dfe2;
+  --theme-input: #e2e8f0;
+  --theme-ring: #020618;
 
-  /* Primary Colors - Forest Green */
-  --theme-primary: #16a34a;
-  --theme-primary-foreground: #ffffff;
+  /* Primary Colors - Cyan */
+  --theme-primary: #5dcbcf;
+  --theme-primary-hover: #4bbbc0;
+  --theme-primary-foreground: #0f172b;
 
   /* Secondary Colors */
-  --theme-secondary: #ecfccb;
-  --theme-secondary-foreground: #365314;
+  --theme-secondary: #f1f5f9;
+  --theme-secondary-foreground: #314158;
+
+  /* Accent Colors - Light Cyan */
+  --theme-accent: #effafa;
+  --theme-accent-hover: #d9f5f6;
+  --theme-accent-foreground: #0f172b;
+  --theme-accent-muted: #beeaec;
+
+  /* Card */
+  --theme-card: #ffffff;
+  --theme-card-foreground: #020618;
+
+  /* Popover */
+  --theme-popover: #ffffff;
+  --theme-popover-foreground: #020618;
 
   /* Semantic Colors */
-  --theme-destructive: #dc2626;
-  --theme-destructive-foreground: #ffffff;
+  --theme-destructive: #e7000b;
+  --theme-destructive-foreground: #f8fafc;
 
-  --theme-success: #22c55e;
-  --theme-success-background-fill: #dcfce7;
+  --theme-success: #2a9d90;
+  --theme-success-background-fill: #ecfdf5;
 
-  --theme-warning: #ea580c;
-  --theme-warning-foreground: #ffffff;
-  --theme-warning-alt: #f59e0b;
+  --theme-warning: #e76e50;
+  --theme-warning-foreground: #f8fafc;
+  --theme-warning-alt: #e8c468;
 
-  --theme-info: #0891b2;
-  --theme-info-foreground: #ffffff;
+  --theme-info: #5dcbcf;
+  --theme-info-foreground: #f8fafc;
 
-  /* Muted Colors */
-  --theme-muted-foreground: #d9f99d;
-  --theme-accent-muted: #e0f4cf;
+  /* Chart Colors */
+  --theme-chart-1: #e76e50;
+  --theme-chart-2: #2a9d90;
+  --theme-chart-3: #274754;
+  --theme-chart-4: #e8c468;
+  --theme-chart-5: #f4a462;
+
+  /* Sidebar */
+  --theme-sidebar-background: #f8fafc;
+  --theme-sidebar-foreground: #314158;
+  --theme-sidebar-primary: #0f172b;
+  --theme-sidebar-primary-foreground: #f8fafc;
+  --theme-sidebar-accent: #f1f5f9;
+  --theme-sidebar-accent-foreground: #0f172b;
+  --theme-sidebar-border: #beeaec;
 }
 
 /* ============================================

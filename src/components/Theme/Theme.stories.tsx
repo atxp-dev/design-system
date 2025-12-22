@@ -9,10 +9,10 @@ import { Alert } from '@/components/Alert';
  * The Circuit & Chisel Design System supports multiple themes with easy runtime switching.
  *
  * ## Available Themes
- * - **light** - Clean, bright theme (default)
- * - **dark** - Dark mode with adjusted colors
- * - **ocean** - Ocean-inspired blue palette
- * - **forest** - Nature-inspired green palette
+ * - **light** - Primary brand theme (default)
+ * - **dark** - Dark mode optimized for low-light environments
+ * - **atxp** - Professional black primary with blue accents
+ * - **dbg** - Cyan/turquoise primary with modern aesthetic
  * - **auto** - Automatically adapts to system preference
  *
  * See THEMES.md for complete documentation.
@@ -31,7 +31,7 @@ type Story = StoryObj;
 function ThemeShowcase() {
   const { theme, setTheme, actualTheme } = useTheme();
 
-  const themes: Theme[] = ['light', 'dark', 'ocean', 'forest', 'auto'];
+  const themes: Theme[] = ['light', 'dark', 'atxp', 'dbg', 'auto'];
 
   return (
     <div className="min-h-screen bg-background p-8">
@@ -241,7 +241,7 @@ export const Interactive: Story = {
 };
 
 /**
- * Light theme (default) - Clean, bright appearance
+ * Light theme (default) - Primary brand theme
  */
 export const LightTheme: Story = {
   render: () => (
@@ -263,22 +263,22 @@ export const DarkTheme: Story = {
 };
 
 /**
- * Ocean theme - Blue-inspired brand variation
+ * ATXP theme - Professional black primary with blue accents
  */
-export const OceanTheme: Story = {
+export const ATXPTheme: Story = {
   render: () => (
-    <ThemeProvider defaultTheme="ocean">
+    <ThemeProvider defaultTheme="atxp">
       <ThemeShowcase />
     </ThemeProvider>
   ),
 };
 
 /**
- * Forest theme - Green-inspired brand variation
+ * DBG theme - Cyan/turquoise primary with modern aesthetic
  */
-export const ForestTheme: Story = {
+export const DBGTheme: Story = {
   render: () => (
-    <ThemeProvider defaultTheme="forest">
+    <ThemeProvider defaultTheme="dbg">
       <ThemeShowcase />
     </ThemeProvider>
   ),

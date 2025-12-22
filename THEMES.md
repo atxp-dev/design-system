@@ -6,10 +6,10 @@ Circuit & Chisel Design System supports multiple themes with easy runtime switch
 
 ### Built-in Themes
 
-- **`light`** (default) - Clean, bright theme based on Figma design system
-- **`dark`** - Dark mode with adjusted colors for low-light environments
-- **`ocean`** - Ocean-inspired blue color palette
-- **`forest`** - Nature-inspired green color palette
+- **`light`** (default) - Primary brand theme from Figma design system (purple/blue primary)
+- **`dark`** - Dark mode optimized for low-light environments
+- **`atxp`** - Professional black primary with blue accents
+- **`dbg`** - Cyan/turquoise primary with modern, fresh aesthetic
 - **`auto`** - Automatically adapts to system preference (light/dark)
 
 ## Usage
@@ -54,8 +54,8 @@ function ThemeToggle() {
       <p>Current theme: {actualTheme}</p>
       <button onClick={() => setTheme('light')}>Light</button>
       <button onClick={() => setTheme('dark')}>Dark</button>
-      <button onClick={() => setTheme('ocean')}>Ocean</button>
-      <button onClick={() => setTheme('forest')}>Forest</button>
+      <button onClick={() => setTheme('atxp')}>ATXP</button>
+      <button onClick={() => setTheme('dbg')}>DBG</button>
       <button onClick={() => setTheme('auto')}>Auto</button>
     </div>
   );
@@ -68,7 +68,7 @@ function ThemeToggle() {
 |----------|------|-------------|
 | `theme` | `Theme` | Current theme setting (may be 'auto') |
 | `setTheme` | `(theme: Theme) => void` | Function to change theme |
-| `actualTheme` | `'light' \| 'dark' \| 'ocean' \| 'forest'` | Resolved theme (never 'auto') |
+| `actualTheme` | `'light' \| 'dark' \| 'atxp' \| 'dbg'` | Resolved theme (never 'auto') |
 
 ### Vanilla JavaScript / Other Frameworks
 
@@ -81,11 +81,11 @@ Set the theme by adding a `data-theme` attribute to the `<html>` element:
 <!-- Dark theme -->
 <html data-theme="dark">
 
-<!-- Ocean theme -->
-<html data-theme="ocean">
+<!-- ATXP theme -->
+<html data-theme="atxp">
 
-<!-- Forest theme -->
-<html data-theme="forest">
+<!-- DBG theme -->
+<html data-theme="dbg">
 ```
 
 #### JavaScript Theme Switching
@@ -250,7 +250,7 @@ Ensure your UI works correctly in all available themes:
 
 ```tsx
 function ThemeTestWrapper({ children }) {
-  const themes = ['light', 'dark', 'ocean', 'forest'];
+  const themes = ['light', 'dark', 'atxp', 'dbg'];
   const [index, setIndex] = useState(0);
 
   return (
@@ -276,9 +276,9 @@ Target specific themes with CSS:
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-/* Only in ocean theme */
-[data-theme="ocean"] .my-component {
-  background: linear-gradient(to bottom, var(--theme-primary), var(--theme-secondary));
+/* Only in ATXP theme */
+[data-theme="atxp"] .my-component {
+  border-width: 2px; /* Professional, defined borders */
 }
 ```
 
@@ -292,8 +292,8 @@ function MyComponent() {
     <div>
       {actualTheme === 'dark' && <MoonIcon />}
       {actualTheme === 'light' && <SunIcon />}
-      {actualTheme === 'ocean' && <WaveIcon />}
-      {actualTheme === 'forest' && <TreeIcon />}
+      {actualTheme === 'atxp' && <BriefcaseIcon />}
+      {actualTheme === 'dbg' && <SparklesIcon />}
     </div>
   );
 }
