@@ -21,7 +21,11 @@ export * from './components/Sheet';
 export * from './components/Skeleton';
 export * from './components/Slider';
 export * from './components/Switch';
+export * from './components/Table';
+export * from './components/Tabs';
+export * from './components/Textarea';
 export * from './components/Toast';
+export * from './components/Toggle';
 
 // Utilities
 export { cn } from './lib/utils';
