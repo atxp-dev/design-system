@@ -7,6 +7,7 @@
   --color-background: var(--theme-background);
   --color-foreground: var(--theme-foreground);
   --color-muted: var(--theme-muted);
+  --color-muted-foreground: var(--theme-muted-foreground);
 
   --color-primary: var(--theme-primary);
   --color-primary-foreground: var(--theme-primary-foreground);
@@ -19,6 +20,15 @@
 
   --color-success: var(--theme-success);
   --color-success-background: var(--theme-success-background-fill);
+
+  --color-warning: var(--theme-warning);
+  --color-warning-foreground: var(--theme-warning-foreground);
+  --color-warning-alt: var(--theme-warning-alt);
+
+  --color-info: var(--theme-info);
+  --color-info-foreground: var(--theme-info-foreground);
+
+  --color-accent-muted: var(--theme-accent-muted);
 
   /* Border Radius */
   --radius-lg: var(--theme-radius);

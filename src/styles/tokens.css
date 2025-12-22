@@ -1,9 +1,20 @@
 /**
  * Design Tokens
- * Generated from Figma Design System
+ * Multi-Theme System
+ *
+ * Base theme from Figma Design System
  * https://www.figma.com/design/nadcKNlrnZUHbbLwm9GdK4/C-C-Design-System---Components
+ *
+ * Theme Usage:
+ * - Default: Light theme (no attribute needed)
+ * - Dark mode: <html data-theme="dark">
+ * - Brand variants: <html data-theme="ocean">, <html data-theme="forest">
+ * - Auto dark mode: Automatically applies dark theme if user prefers dark color scheme
  */
 
+/* ============================================
+   DEFAULT THEME (LIGHT)
+   ============================================ */
 :root {
   /* Colors - Theme */
   --theme-foreground: #020618;
@@ -77,4 +88,158 @@
   /* Opacity */
   --opacity-80: 0.8;
   --opacity-100: 1;
+}
+
+/* ============================================
+   DARK THEME
+   ============================================ */
+[data-theme="dark"] {
+  /* Base Colors */
+  --theme-foreground: #f8fafc;
+  --theme-background: #020618;
+  --theme-muted: #1e293b;
+  --theme-border: #4c4799;
+
+  /* Primary Colors */
+  --theme-primary: #7c77ff;
+  --theme-primary-foreground: #020618;
+
+  /* Secondary Colors */
+  --theme-secondary: #1e293b;
+  --theme-secondary-foreground: #cbd5e1;
+
+  /* Semantic Colors */
+  --theme-destructive: #ff4757;
+  --theme-destructive-foreground: #f8fafc;
+
+  --theme-success: #10d9a0;
+  --theme-success-background-fill: #0a3329;
+
+  --theme-warning: #ff6b6b;
+  --theme-warning-foreground: #f8fafc;
+  --theme-warning-alt: #ffd93d;
+
+  --theme-info: #7ddee0;
+  --theme-info-foreground: #020618;
+
+  /* Muted Colors */
+  --theme-muted-foreground: #334155;
+  --theme-accent-muted: #1a3538;
+}
+
+/* ============================================
+   BRAND THEME: OCEAN
+   Example of a brand-specific color scheme
+   ============================================ */
+[data-theme="ocean"] {
+  /* Base Colors */
+  --theme-foreground: #0a1929;
+  --theme-background: #f0f9ff;
+  --theme-muted: #e0f2fe;
+  --theme-border: #7dd3fc;
+
+  /* Primary Colors - Ocean Blue */
+  --theme-primary: #0284c7;
+  --theme-primary-foreground: #ffffff;
+
+  /* Secondary Colors */
+  --theme-secondary: #e0f2fe;
+  --theme-secondary-foreground: #075985;
+
+  /* Semantic Colors */
+  --theme-destructive: #dc2626;
+  --theme-destructive-foreground: #ffffff;
+
+  --theme-success: #059669;
+  --theme-success-background-fill: #d1fae5;
+
+  --theme-warning: #ea580c;
+  --theme-warning-foreground: #ffffff;
+  --theme-warning-alt: #f59e0b;
+
+  --theme-info: #06b6d4;
+  --theme-info-foreground: #ffffff;
+
+  /* Muted Colors */
+  --theme-muted-foreground: #bae6fd;
+  --theme-accent-muted: #cffafe;
+}
+
+/* ============================================
+   BRAND THEME: FOREST
+   Another example brand variation
+   ============================================ */
+[data-theme="forest"] {
+  /* Base Colors */
+  --theme-foreground: #14532d;
+  --theme-background: #f7fee7;
+  --theme-muted: #ecfccb;
+  --theme-border: #a3e635;
+
+  /* Primary Colors - Forest Green */
+  --theme-primary: #16a34a;
+  --theme-primary-foreground: #ffffff;
+
+  /* Secondary Colors */
+  --theme-secondary: #ecfccb;
+  --theme-secondary-foreground: #365314;
+
+  /* Semantic Colors */
+  --theme-destructive: #dc2626;
+  --theme-destructive-foreground: #ffffff;
+
+  --theme-success: #22c55e;
+  --theme-success-background-fill: #dcfce7;
+
+  --theme-warning: #ea580c;
+  --theme-warning-foreground: #ffffff;
+  --theme-warning-alt: #f59e0b;
+
+  --theme-info: #0891b2;
+  --theme-info-foreground: #ffffff;
+
+  /* Muted Colors */
+  --theme-muted-foreground: #d9f99d;
+  --theme-accent-muted: #e0f4cf;
+}
+
+/* ============================================
+   AUTOMATIC DARK MODE
+   Respects user's system preference
+   Only applies if no explicit data-theme is set
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    /* Base Colors */
+    --theme-foreground: #f8fafc;
+    --theme-background: #020618;
+    --theme-muted: #1e293b;
+    --theme-border: #4c4799;
+
+    /* Primary Colors */
+    --theme-primary: #7c77ff;
+    --theme-primary-foreground: #020618;
+
+    /* Secondary Colors */
+    --theme-secondary: #1e293b;
+    --theme-secondary-foreground: #cbd5e1;
+
+    /* Semantic Colors */
+    --theme-destructive: #ff4757;
+    --theme-destructive-foreground: #f8fafc;
+
+    --theme-success: #10d9a0;
+    --theme-success-background-fill: #0a3329;
+
+    --theme-warning: #ff6b6b;
+    --theme-warning-foreground: #f8fafc;
+    --theme-warning-alt: #ffd93d;
+
+    --theme-info: #7ddee0;
+    --theme-info-foreground: #020618;
+
+    /* Muted Colors */
+    --theme-muted-foreground: #334155;
+    --theme-accent-muted: #1a3538;
+  }
 }
