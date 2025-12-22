@@ -40,6 +40,115 @@ function App() {
 }
 ```
 
+### Peer Dependencies
+
+This design system requires the following peer dependencies to be installed in your project:
+
+```bash
+npm install lucide-react sonner
+```
+
+These are included as peer dependencies because:
+- **lucide-react**: Icons are re-exported through the design system's API
+- **sonner**: Toast notifications are re-exported for direct use
+
+## Optional: Using Design Tokens in Your Own Code
+
+The design system ships with pre-compiled CSS that includes all styles for the components. **You do not need Tailwind CSS installed** to use the components.
+
+However, if you want to use the design system's color tokens (like `bg-primary`, `text-destructive`) and other design tokens in your own custom components, you can optionally set up Tailwind CSS in your project:
+
+### 1. Install Tailwind CSS
+
+```bash
+npm install -D tailwindcss autoprefixer postcss
+```
+
+### 2. Create a Tailwind Config
+
+Create a `tailwind.config.js` in your project root:
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        border: 'hsl(var(--theme-border))',
+        input: 'hsl(var(--theme-input))',
+        ring: 'hsl(var(--theme-ring))',
+        background: 'hsl(var(--theme-background))',
+        foreground: 'hsl(var(--theme-foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--theme-primary))',
+          foreground: 'hsl(var(--theme-primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--theme-secondary))',
+          foreground: 'hsl(var(--theme-secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--theme-destructive))',
+          foreground: 'hsl(var(--theme-destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--theme-muted))',
+          foreground: 'hsl(var(--theme-muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--theme-accent))',
+          foreground: 'hsl(var(--theme-accent-foreground))',
+        },
+        // Add other tokens as needed
+      },
+    },
+  },
+  plugins: [],
+}
+```
+
+### 3. Create a CSS File
+
+Create a `src/index.css` with Tailwind directives:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### 4. Import Both Stylesheets
+
+In your app entry point (e.g., `main.tsx`):
+
+```tsx
+import '@atxp/design-system/styles.css'; // Design system styles
+import './index.css'; // Your Tailwind utilities
+```
+
+### 5. Use Design Tokens in Your Code
+
+Now you can use design tokens in your custom components:
+
+```tsx
+function MyCustomComponent() {
+  return (
+    <div className="bg-primary text-primary-foreground p-4 rounded-lg">
+      <h2 className="text-xl font-bold">Custom Component</h2>
+      <p className="text-muted-foreground">
+        Using design system tokens in custom code
+      </p>
+    </div>
+  );
+}
+```
+
+**Note**: This is completely optional. The design system components work perfectly without any Tailwind setup in your project.
+
 ## Development
 
 ### Prerequisites
