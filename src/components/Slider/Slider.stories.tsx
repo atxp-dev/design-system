@@ -144,88 +144,94 @@ export const Sizes: Story = {
 /**
  * With labels and value display
  */
-export const WithLabels: Story = {
-  render: () => {
-    const [value, setValue] = React.useState([50]);
-    return (
-      <div className="w-[296px] space-y-4">
-        <div className="flex items-center justify-between">
-          <label className="text-sm font-medium">Volume</label>
-          <span className="text-sm text-muted-foreground">{value[0]}%</span>
-        </div>
-        <Slider
-          value={value}
-          onValueChange={setValue}
-          max={100}
-          step={1}
-        />
-        <div className="flex justify-between text-xs text-muted-foreground">
-          <span>0</span>
-          <span>100</span>
-        </div>
+const WithLabelsComponent = () => {
+  const [value, setValue] = React.useState([50]);
+  return (
+    <div className="w-[296px] space-y-4">
+      <div className="flex items-center justify-between">
+        <label className="text-sm font-medium">Volume</label>
+        <span className="text-sm text-muted-foreground">{value[0]}%</span>
       </div>
-    );
-  },
+      <Slider
+        value={value}
+        onValueChange={setValue}
+        max={100}
+        step={1}
+      />
+      <div className="flex justify-between text-xs text-muted-foreground">
+        <span>0</span>
+        <span>100</span>
+      </div>
+    </div>
+  );
+};
+
+export const WithLabels: Story = {
+  render: () => <WithLabelsComponent />,
 };
 
 /**
  * Temperature control example
  */
-export const TemperatureControl: Story = {
-  render: () => {
-    const [temp, setTemp] = React.useState([20]);
-    return (
-      <div className="w-[320px] rounded-lg border border-border p-6">
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-base font-semibold">Temperature</h3>
-            <span className="text-2xl font-bold text-primary">{temp[0]}°C</span>
-          </div>
-          <Slider
-            value={temp}
-            onValueChange={setTemp}
-            min={16}
-            max={30}
-            step={0.5}
-          />
-          <div className="flex justify-between text-xs text-muted-foreground">
-            <span>16°C</span>
-            <span>23°C</span>
-            <span>30°C</span>
-          </div>
+const TemperatureControlComponent = () => {
+  const [temp, setTemp] = React.useState([20]);
+  return (
+    <div className="w-[320px] rounded-lg border border-border p-6">
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-base font-semibold">Temperature</h3>
+          <span className="text-2xl font-bold text-primary">{temp[0]}°C</span>
+        </div>
+        <Slider
+          value={temp}
+          onValueChange={setTemp}
+          min={16}
+          max={30}
+          step={0.5}
+        />
+        <div className="flex justify-between text-xs text-muted-foreground">
+          <span>16°C</span>
+          <span>23°C</span>
+          <span>30°C</span>
         </div>
       </div>
-    );
-  },
+    </div>
+  );
+};
+
+export const TemperatureControl: Story = {
+  render: () => <TemperatureControlComponent />,
 };
 
 /**
  * Price range filter
  */
-export const PriceRange: Story = {
-  render: () => {
-    const [range, setRange] = React.useState([100, 500]);
-    return (
-      <div className="w-[320px] rounded-lg border border-border p-6">
-        <div className="space-y-4">
-          <h3 className="text-base font-semibold">Price Range</h3>
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-muted-foreground">Min:</span>
-            <span className="font-medium">${range[0]}</span>
-          </div>
-          <Slider
-            value={range}
-            onValueChange={setRange}
-            min={0}
-            max={1000}
-            step={10}
-          />
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-muted-foreground">Max:</span>
-            <span className="font-medium">${range[1]}</span>
-          </div>
+const PriceRangeComponent = () => {
+  const [range, setRange] = React.useState([100, 500]);
+  return (
+    <div className="w-[320px] rounded-lg border border-border p-6">
+      <div className="space-y-4">
+        <h3 className="text-base font-semibold">Price Range</h3>
+        <div className="flex items-center justify-between text-sm">
+          <span className="text-muted-foreground">Min:</span>
+          <span className="font-medium">${range[0]}</span>
+        </div>
+        <Slider
+          value={range}
+          onValueChange={setRange}
+          min={0}
+          max={1000}
+          step={10}
+        />
+        <div className="flex items-center justify-between text-sm">
+          <span className="text-muted-foreground">Max:</span>
+          <span className="font-medium">${range[1]}</span>
         </div>
       </div>
-    );
-  },
+    </div>
+  );
+};
+
+export const PriceRange: Story = {
+  render: () => <PriceRangeComponent />,
 };

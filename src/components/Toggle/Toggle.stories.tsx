@@ -152,22 +152,24 @@ export const OutlineToolbar: Story = {
 /**
  * Controlled toggle
  */
+const ControlledToggleComponent = () => {
+  const [pressed, setPressed] = React.useState(false);
+  return (
+    <div className="flex flex-col gap-4">
+      <Toggle
+        pressed={pressed}
+        onPressedChange={setPressed}
+        aria-label="Toggle bold"
+      >
+        <Bold className="h-4 w-4" />
+      </Toggle>
+      <p className="text-sm text-muted-foreground">
+        Toggle is {pressed ? 'pressed' : 'not pressed'}
+      </p>
+    </div>
+  );
+};
+
 export const Controlled: Story = {
-  render: () => {
-    const [pressed, setPressed] = React.useState(false);
-    return (
-      <div className="flex flex-col gap-4">
-        <Toggle
-          pressed={pressed}
-          onPressedChange={setPressed}
-          aria-label="Toggle bold"
-        >
-          <Bold className="h-4 w-4" />
-        </Toggle>
-        <p className="text-sm text-muted-foreground">
-          Toggle is {pressed ? 'pressed' : 'not pressed'}
-        </p>
-      </div>
-    );
-  },
+  render: () => <ControlledToggleComponent />,
 };

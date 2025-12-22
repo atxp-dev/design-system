@@ -93,61 +93,65 @@ export const WithDescription: Story = {
 /**
  * With character counter
  */
+const WithCounterComponent = () => {
+  const [value, setValue] = React.useState('');
+  const maxLength = 200;
+  return (
+    <div className="w-[340px] space-y-2">
+      <label htmlFor="description" className="text-sm font-medium">
+        Description
+      </label>
+      <Textarea
+        id="description"
+        placeholder="Enter description"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        maxLength={maxLength}
+      />
+      <p className="text-xs text-muted-foreground text-right">
+        {value.length}/{maxLength}
+      </p>
+    </div>
+  );
+};
+
 export const WithCounter: Story = {
-  render: () => {
-    const [value, setValue] = React.useState('');
-    const maxLength = 200;
-    return (
-      <div className="w-[340px] space-y-2">
-        <label htmlFor="description" className="text-sm font-medium">
-          Description
-        </label>
-        <Textarea
-          id="description"
-          placeholder="Enter description"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          maxLength={maxLength}
-        />
-        <p className="text-xs text-muted-foreground text-right">
-          {value.length}/{maxLength}
-        </p>
-      </div>
-    );
-  },
+  render: () => <WithCounterComponent />,
 };
 
 /**
  * Auto-growing
  */
+const AutoGrowingComponent = () => {
+  const [value, setValue] = React.useState('');
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+
+  React.useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, [value]);
+
+  return (
+    <div className="w-[340px] space-y-2">
+      <label htmlFor="notes" className="text-sm font-medium">
+        Notes
+      </label>
+      <Textarea
+        ref={textareaRef}
+        id="notes"
+        placeholder="Start typing and this textarea will grow..."
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        className="min-h-[82px] resize-none overflow-hidden"
+      />
+    </div>
+  );
+};
+
 export const AutoGrowing: Story = {
-  render: () => {
-    const [value, setValue] = React.useState('');
-    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
-
-    React.useEffect(() => {
-      if (textareaRef.current) {
-        textareaRef.current.style.height = 'auto';
-        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-      }
-    }, [value]);
-
-    return (
-      <div className="w-[340px] space-y-2">
-        <label htmlFor="notes" className="text-sm font-medium">
-          Notes
-        </label>
-        <Textarea
-          ref={textareaRef}
-          id="notes"
-          placeholder="Start typing and this textarea will grow..."
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          className="min-h-[82px] resize-none overflow-hidden"
-        />
-      </div>
-    );
-  },
+  render: () => <AutoGrowingComponent />,
 };
 
 /**
@@ -159,7 +163,7 @@ export const Form: Story = {
       <div>
         <h3 className="text-lg font-semibold">Contact Us</h3>
         <p className="text-sm text-muted-foreground">
-          Send us a message and we'll get back to you.
+          Send us a message and we&apos;ll get back to you.
         </p>
       </div>
 
