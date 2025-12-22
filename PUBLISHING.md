@@ -5,8 +5,6 @@
 ### 1. NPM Account & Organization Setup
 - [ ] Have an npm account (create at https://www.npmjs.com/signup)
 - [ ] Be a member of the @atxp organization on npm
-  - If the org doesn't exist, create it at: https://www.npmjs.com/org/create
-  - If it exists, have an admin add you as a member
 
 ### 2. Local NPM Authentication
 ```bash
