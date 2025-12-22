@@ -35,6 +35,29 @@
   /* Muted Colors */
   --theme-muted-foreground: #334155;
   --theme-accent-muted: #1a3538;
+
+  /* Accent */
+  --theme-accent: #1e293b;
+  --theme-accent-hover: #2d3f5f;
+  --theme-accent-foreground: #f8fafc;
+
+  /* Card */
+  --theme-card: #0f172a;
+  --theme-card-foreground: #f8fafc;
+
+  /* Popover */
+  --theme-popover: #0f172a;
+  --theme-popover-foreground: #f8fafc;
+
+  /* Input */
+  --theme-input: #334155;
+  --theme-ring: #7c77ff;
+
+  /* Border Hover */
+  --theme-border-hover: #6b66ff;
+
+  /* Primary Hover */
+  --theme-primary-hover: #6b66ff;
 }
 
 /**
@@ -75,5 +98,28 @@
     /* Muted Colors */
     --theme-muted-foreground: #334155;
     --theme-accent-muted: #1a3538;
+
+    /* Accent */
+    --theme-accent: #1e293b;
+    --theme-accent-hover: #2d3f5f;
+    --theme-accent-foreground: #f8fafc;
+
+    /* Card */
+    --theme-card: #0f172a;
+    --theme-card-foreground: #f8fafc;
+
+    /* Popover */
+    --theme-popover: #0f172a;
+    --theme-popover-foreground: #f8fafc;
+
+    /* Input */
+    --theme-input: #334155;
+    --theme-ring: #7c77ff;
+
+    /* Border Hover */
+    --theme-border-hover: #6b66ff;
+
+    /* Primary Hover */
+    --theme-primary-hover: #6b66ff;
   }
 }
