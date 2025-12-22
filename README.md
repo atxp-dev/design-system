@@ -5,12 +5,12 @@ A React component library built with TypeScript, Tailwind CSS, and based on our 
 ## Installation
 
 ```bash
-pnpm add @circuitandchisel/design-system
+pnpm add @atxp/design-system
 ```
 
 Or with npm:
 ```bash
-npm install @circuitandchisel/design-system
+npm install @atxp/design-system
 ```
 
 ## Usage
@@ -20,13 +20,13 @@ npm install @circuitandchisel/design-system
 First, import the design system styles in your app's entry point:
 
 ```tsx
-import '@circuitandchisel/design-system/styles.css';
+import '@atxp/design-system/styles.css';
 ```
 
 ### Use Components
 
 ```tsx
-import { Badge } from '@circuitandchisel/design-system';
+import { Badge } from '@atxp/design-system';
 
 function App() {
   return (
@@ -208,13 +208,15 @@ These tokens are configured in Tailwind (`tailwind.config.js`) and can be used v
 
 ## Publishing
 
-This package is published to npm as `@circuitandchisel/design-system`.
+This package is published to npm as `@atxp/design-system`.
+
+See [PUBLISHING.md](./PUBLISHING.md) for detailed publishing instructions and requirements.
 
 ```bash
 # Build the package
 pnpm build
 
-# Publish (requires npm access)
+# Publish (requires npm access to @atxp organization)
 pnpm publish
 ```
 
