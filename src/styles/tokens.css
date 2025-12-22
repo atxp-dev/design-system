@@ -23,6 +23,16 @@
   --theme-success: #00bc7d;
   --theme-success-background-fill: #ecfdf5;
 
+  --theme-warning: #e76e50;
+  --theme-warning-foreground: #f8fafc;
+  --theme-warning-alt: #e8c468;
+
+  --theme-info: #5dcbcf;
+  --theme-info-foreground: #f8fafc;
+
+  --theme-muted-foreground: #e2e8f0;
+  --theme-accent-muted: #beeaec;
+
   /* Colors - Purple Scale */
   --color-purple-600: #9810fa;
 

@@ -31,8 +31,21 @@ export default {
           DEFAULT: 'var(--theme-success)',
           background: 'var(--theme-success-background-fill)',
         },
+        warning: {
+          DEFAULT: 'var(--theme-warning)',
+          foreground: 'var(--theme-warning-foreground)',
+          alt: 'var(--theme-warning-alt)',
+        },
+        info: {
+          DEFAULT: 'var(--theme-info)',
+          foreground: 'var(--theme-info-foreground)',
+        },
         muted: {
           DEFAULT: 'var(--theme-muted)',
+          foreground: 'var(--theme-muted-foreground)',
+        },
+        accent: {
+          muted: 'var(--theme-accent-muted)',
         },
       },
       borderRadius: {
