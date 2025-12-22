@@ -24,6 +24,9 @@ importers:
         specifier: ^0.562.0
         version: 0.562.0(react@19.2.3)
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.39.2
+        version: 9.39.2
       '@storybook/addon-designs':
         specifier: ^11.1.0
         version: 11.1.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.1.10(@testing-library/dom@10.4.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
