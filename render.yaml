@@ -2,7 +2,6 @@ services:
 - type: web
   name: design-system-storybook
   runtime: static
-  repo: https://github.com/atxp-dev/design-system
   buildCommand: pnpm install --frozen-lockfile && pnpm run build-storybook
   staticPublishPath: storybook-static
   autoDeployTrigger: commit
@@ -10,7 +9,6 @@ services:
 - type: web
   name: design-system-vanilla
   runtime: static
-  repo: https://github.com/atxp-dev/design-system
   buildCommand: pnpm install --frozen-lockfile && chmod +x vanilla/build.sh && ./vanilla/build.sh
   staticPublishPath: vanilla
   autoDeployTrigger: commit
