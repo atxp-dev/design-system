@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog Component - ATXP Design System</title>
+  <link rel="stylesheet" href="../../dist/styles.css">
+  <style>
+    body {
+      padding: 2rem;
+      font-family: Inter, system-ui, sans-serif;
+      background-color: var(--theme-background);
+      color: var(--theme-foreground);
+    }
+    .demo-section {
+      margin-bottom: 2rem;
+    }
+    .demo-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-bottom: 2rem; font-size: 2rem; font-weight: bold;">Dialog Component</h1>
+
+  <!-- Dialog Triggers -->
+  <div class="demo-section">
+    <h2>Dialog Examples</h2>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <button
+        data-dialog-trigger="dialog-simple"
+        class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2"
+      >
+        Open Simple Dialog
+      </button>
+
+      <button
+        data-dialog-trigger="dialog-form"
+        class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-border bg-background text-accent-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:bg-muted h-9 px-4 py-2"
+      >
+        Open Form Dialog
+      </button>
+
+      <button
+        data-dialog-trigger="dialog-confirm"
+        class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-9 px-4 py-2"
+      >
+        Open Confirm Dialog
+      </button>
+    </div>
+  </div>
+
+  <!-- Simple Dialog -->
+  <div id="dialog-simple" data-dialog-id="dialog-simple" style="display: none;">
+    <div class="fixed inset-0 z-50 flex items-center justify-center" data-dialog-overlay>
+      <!-- Overlay -->
+      <div class="fixed inset-0 bg-black/80" aria-hidden="true"></div>
+
+      <!-- Dialog -->
+      <div
+        data-dialog-content
+        role="dialog"
+        aria-modal="true"
+        class="relative z-50 flex w-[512px] flex-col gap-4 overflow-hidden rounded-lg border border-border bg-background p-6 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-2px_rgba(0,0,0,0.05)]"
+      >
+        <button
+          data-dialog-close
+          class="absolute right-[15px] top-[15px] rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Close"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <!-- Header -->
+        <div class="flex flex-col gap-1.5">
+          <h2 class="text-lg font-semibold leading-7 text-foreground">Welcome!</h2>
+          <p class="text-sm leading-5 text-muted-foreground">This is a simple dialog example.</p>
+        </div>
+
+        <!-- Content -->
+        <div>
+          <p>This dialog demonstrates the basic structure and styling of the ATXP Design System dialog component.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex items-center justify-end gap-2">
+          <button
+            data-dialog-close
+            class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2"
+          >
+            Got it!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Dialog -->
+  <div id="dialog-form" data-dialog-id="dialog-form" style="display: none;">
+    <div class="fixed inset-0 z-50 flex items-center justify-center" data-dialog-overlay>
+      <div class="fixed inset-0 bg-black/80" aria-hidden="true"></div>
+
+      <div
+        data-dialog-content
+        role="dialog"
+        aria-modal="true"
+        class="relative z-50 flex w-[512px] flex-col gap-4 overflow-hidden rounded-lg border border-border bg-background p-6 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-2px_rgba(0,0,0,0.05)]"
+      >
+        <button
+          data-dialog-close
+          class="absolute right-[15px] top-[15px] rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Close"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <div class="flex flex-col gap-1.5">
+          <h2 class="text-lg font-semibold leading-7 text-foreground">Edit Profile</h2>
+          <p class="text-sm leading-5 text-muted-foreground">Make changes to your profile here.</p>
+        </div>
+
+        <form id="profile-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="form-name" style="font-size: 0.875rem; font-weight: 500;">Name</label>
+            <input
+              id="form-name"
+              type="text"
+              value="John Doe"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm leading-5 text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            />
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="form-email" style="font-size: 0.875rem; font-weight: 500;">Email</label>
+            <input
+              id="form-email"
+              type="email"
+              value="john@example.com"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm leading-5 text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            />
+          </div>
+        </form>
+
+        <div class="flex items-center justify-end gap-2">
+          <button
+            data-dialog-close
+            class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-foreground hover:bg-muted h-9 px-4 py-2"
+          >
+            Cancel
+          </button>
+          <button
+            onclick="handleFormSubmit(event)"
+            class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2"
+          >
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirm Dialog -->
+  <div id="dialog-confirm" data-dialog-id="dialog-confirm" style="display: none;">
+    <div class="fixed inset-0 z-50 flex items-center justify-center" data-dialog-overlay>
+      <div class="fixed inset-0 bg-black/80" aria-hidden="true"></div>
+
+      <div
+        data-dialog-content
+        role="dialog"
+        aria-modal="true"
+        class="relative z-50 flex w-[512px] flex-col gap-4 overflow-hidden rounded-lg border border-border bg-background p-6 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-2px_rgba(0,0,0,0.05)]"
+      >
+        <button
+          data-dialog-close
+          class="absolute right-[15px] top-[15px] rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Close"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <div class="flex flex-col gap-1.5">
+          <h2 class="text-lg font-semibold leading-7 text-foreground">Are you sure?</h2>
+          <p class="text-sm leading-5 text-muted-foreground">This action cannot be undone.</p>
+        </div>
+
+        <div>
+          <p>This will permanently delete your account and remove your data from our servers.</p>
+        </div>
+
+        <div class="flex items-center justify-end gap-2">
+          <button
+            data-dialog-close
+            class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-border bg-background text-accent-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:bg-muted h-9 px-4 py-2"
+          >
+            Cancel
+          </button>
+          <button
+            onclick="handleConfirm(event)"
+            class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-9 px-4 py-2"
+          >
+            Delete Account
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/components.js"></script>
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const email = document.getElementById('form-email').value;
+
+      // Show toast notification
+      window.toast.show(`Profile updated for ${name}`, {
+        variant: 'success',
+        title: 'Success!'
+      });
+
+      // Close dialog
+      window.dialogs['dialog-form'].close();
+    }
+
+    function handleConfirm(event) {
+      event.preventDefault();
+
+      // Show toast notification
+      window.toast.show('Account deletion cancelled (this is just a demo)', {
+        variant: 'default',
+        title: 'Demo Mode'
+      });
+
+      // Close dialog
+      window.dialogs['dialog-confirm'].close();
+    }
+  </script>
+
+</body>
+</html>

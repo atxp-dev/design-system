@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Components - ATXP Design System</title>
+  <link rel="stylesheet" href="../../dist/styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Inter, system-ui, sans-serif;
+      background-color: var(--theme-background);
+      color: var(--theme-foreground);
+    }
+    .demo-section {
+      margin-bottom: 3rem;
+    }
+    .demo-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .demo-section p {
+      color: var(--theme-muted-foreground);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Tabs Styles */
+    .tabs-content {
+      display: none;
+    }
+    .tabs-content.active {
+      display: block;
+    }
+
+    /* Accordion Styles */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .accordion-content.open {
+      max-height: 500px;
+    }
+    .accordion-trigger svg {
+      transition: transform 0.2s;
+    }
+    .accordion-trigger.open svg {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-bottom: 2rem; font-size: 2rem; font-weight: bold;">Interactive Components</h1>
+
+  <!-- Tabs -->
+  <section class="demo-section">
+    <h2>Tabs</h2>
+    <p>Organize content into separate views where only one view is visible at a time.</p>
+
+    <div class="rounded-lg border border-border bg-card p-6" style="max-width: 600px;">
+      <!-- Tabs List -->
+      <div class="inline-flex h-auto items-center justify-start gap-0 text-muted-foreground" role="tablist" data-tabs="demo-tabs">
+        <button
+          role="tab"
+          aria-selected="true"
+          aria-controls="tab-account"
+          data-tab-trigger="account"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-xs px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-background text-foreground shadow-sm font-semibold"
+        >
+          Account
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-password"
+          data-tab-trigger="password"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-xs px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-muted-foreground"
+        >
+          Password
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-notifications"
+          data-tab-trigger="notifications"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-xs px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-muted-foreground"
+        >
+          Notifications
+        </button>
+      </div>
+
+      <!-- Tabs Content -->
+      <div class="tabs-content active" id="tab-account" role="tabpanel" style="margin-top: 1rem;">
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Account Settings</h3>
+        <p style="color: var(--theme-muted-foreground); margin-bottom: 1rem;">
+          Make changes to your account here. Click save when you're done.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Name</label>
+            <input type="text" value="John Doe" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" />
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Email</label>
+            <input type="email" value="john@example.com" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" />
+          </div>
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+            Save Changes
+          </button>
+        </div>
+      </div>
+
+      <div class="tabs-content" id="tab-password" role="tabpanel" style="margin-top: 1rem;">
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Change Password</h3>
+        <p style="color: var(--theme-muted-foreground); margin-bottom: 1rem;">
+          Update your password here. After saving, you'll be logged out.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Current Password</label>
+            <input type="password" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" />
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">New Password</label>
+            <input type="password" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" />
+          </div>
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+            Update Password
+          </button>
+        </div>
+      </div>
+
+      <div class="tabs-content" id="tab-notifications" role="tabpanel" style="margin-top: 1rem;">
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Notification Settings</h3>
+        <p style="color: var(--theme-muted-foreground); margin-bottom: 1rem;">
+          Configure how you receive notifications.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 500;">Email Notifications</div>
+              <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Receive email updates</div>
+            </div>
+            <input type="checkbox" checked />
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 500;">Push Notifications</div>
+              <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Receive push notifications</div>
+            </div>
+            <input type="checkbox" />
+          </div>
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+            Save Preferences
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion -->
+  <section class="demo-section">
+    <h2>Accordion</h2>
+    <p>Collapsible content sections for organizing information.</p>
+
+    <div style="max-width: 600px;">
+      <!-- Accordion Item 1 -->
+      <div class="border-b border-border">
+        <div class="flex">
+          <button
+            class="accordion-trigger flex flex-1 items-center justify-between py-4 text-base font-medium transition-all hover:underline"
+            data-accordion-trigger="item-1"
+          >
+            <span>What is the ATXP Design System?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-foreground">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="accordion-content text-sm" data-accordion-content="item-1">
+          <div class="pb-4 pt-0">
+            The ATXP Design System is a comprehensive collection of reusable components, design tokens, and guidelines that help teams build consistent and accessible user interfaces quickly.
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 2 -->
+      <div class="border-b border-border">
+        <div class="flex">
+          <button
+            class="accordion-trigger flex flex-1 items-center justify-between py-4 text-base font-medium transition-all hover:underline"
+            data-accordion-trigger="item-2"
+          >
+            <span>How do I install the design system?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-foreground">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="accordion-content text-sm" data-accordion-content="item-2">
+          <div class="pb-4 pt-0">
+            You can install the design system using npm or yarn:<br><br>
+            <code style="background-color: var(--theme-muted); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">npm install @atxp/design-system</code><br><br>
+            Then import the CSS in your application.
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 3 -->
+      <div class="border-b border-border">
+        <div class="flex">
+          <button
+            class="accordion-trigger flex flex-1 items-center justify-between py-4 text-base font-medium transition-all hover:underline"
+            data-accordion-trigger="item-3"
+          >
+            <span>Can I customize the theme?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-foreground">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="accordion-content text-sm" data-accordion-content="item-3">
+          <div class="pb-4 pt-0">
+            Yes! The design system supports multiple themes (light, dark, ATXP, DBG) and you can easily create custom themes by defining CSS variables. All theme tokens use CSS custom properties for maximum flexibility.
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 4 -->
+      <div class="border-b border-border">
+        <div class="flex">
+          <button
+            class="accordion-trigger flex flex-1 items-center justify-between py-4 text-base font-medium transition-all hover:underline"
+            data-accordion-trigger="item-4"
+          >
+            <span>Is it accessible?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-foreground">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="accordion-content text-sm" data-accordion-content="item-4">
+          <div class="pb-4 pt-0">
+            Absolutely! All components are built with accessibility in mind, following WAI-ARIA guidelines. Components include proper ARIA labels, keyboard navigation, focus management, and screen reader support.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress -->
+  <section class="demo-section">
+    <h2>Progress</h2>
+    <p>Visual indicator showing task completion.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 2rem; max-width: 500px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span style="font-size: 0.875rem; font-weight: 500;">Uploading...</span>
+          <span style="font-size: 0.875rem; color: var(--theme-muted-foreground);">25%</span>
+        </div>
+        <div class="relative h-4 w-full overflow-hidden rounded-full bg-secondary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25">
+          <div class="h-full bg-primary transition-all duration-300 ease-in-out" style="width: 25%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span style="font-size: 0.875rem; font-weight: 500;">Processing...</span>
+          <span style="font-size: 0.875rem; color: var(--theme-muted-foreground);">60%</span>
+        </div>
+        <div class="relative h-4 w-full overflow-hidden rounded-full bg-secondary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+          <div class="h-full bg-primary transition-all duration-300 ease-in-out" style="width: 60%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span style="font-size: 0.875rem; font-weight: 500;">Complete!</span>
+          <span style="font-size: 0.875rem; color: var(--theme-success);">100%</span>
+        </div>
+        <div class="relative h-4 w-full overflow-hidden rounded-full bg-secondary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+          <div class="h-full bg-primary transition-all duration-300 ease-in-out" style="width: 100%"></div>
+        </div>
+      </div>
+
+      <!-- Animated Progress Example -->
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span style="font-size: 0.875rem; font-weight: 500;">Simulated Progress</span>
+          <span style="font-size: 0.875rem; color: var(--theme-muted-foreground);" id="progress-value">0%</span>
+        </div>
+        <div class="relative h-4 w-full overflow-hidden rounded-full bg-secondary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progress-bar" class="h-full bg-primary transition-all duration-300 ease-in-out" style="width: 0%"></div>
+        </div>
+        <button
+          onclick="simulateProgress()"
+          class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2"
+          style="margin-top: 1rem;"
+        >
+          Start Progress
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skeleton -->
+  <section class="demo-section">
+    <h2>Skeleton</h2>
+    <p>Loading placeholders for content.</p>
+
+    <div style="display: grid; gap: 2rem;">
+      <div>
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Card Skeleton</h3>
+        <div class="rounded-lg border border-border bg-card p-6" style="max-width: 400px;">
+          <div style="display: flex; items-center gap: 1rem; margin-bottom: 1rem;">
+            <div class="animate-pulse rounded-md bg-muted h-10 w-10 rounded-full"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+              <div class="animate-pulse rounded-md bg-muted h-4 w-32"></div>
+              <div class="animate-pulse rounded-md bg-muted h-3 w-24"></div>
+            </div>
+          </div>
+          <div class="animate-pulse rounded-md bg-muted h-32 w-full" style="margin-bottom: 1rem;"></div>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="animate-pulse rounded-md bg-muted h-4 w-full"></div>
+            <div class="animate-pulse rounded-md bg-muted h-4 w-full"></div>
+            <div class="animate-pulse rounded-md bg-muted h-4 w-48"></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">List Skeleton</h3>
+        <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
+          <div style="display: flex; items-center; gap: 1rem;">
+            <div class="animate-pulse rounded-md bg-muted h-12 w-12"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+              <div class="animate-pulse rounded-md bg-muted h-4 w-48"></div>
+              <div class="animate-pulse rounded-md bg-muted h-3 w-32"></div>
+            </div>
+          </div>
+          <div style="display: flex; items-center; gap: 1rem;">
+            <div class="animate-pulse rounded-md bg-muted h-12 w-12"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+              <div class="animate-pulse rounded-md bg-muted h-4 w-48"></div>
+              <div class="animate-pulse rounded-md bg-muted h-3 w-32"></div>
+            </div>
+          </div>
+          <div style="display: flex; items-center; gap: 1rem;">
+            <div class="animate-pulse rounded-md bg-muted h-12 w-12"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+              <div class="animate-pulse rounded-md bg-muted h-4 w-48"></div>
+              <div class="animate-pulse rounded-md bg-muted h-3 w-32"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Tabs functionality
+    document.querySelectorAll('[data-tab-trigger]').forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const tabId = this.getAttribute('data-tab-trigger');
+        const tabsContainer = this.closest('[data-tabs]');
+
+        // Update triggers
+        tabsContainer.querySelectorAll('[data-tab-trigger]').forEach(t => {
+          t.setAttribute('aria-selected', 'false');
+          t.classList.remove('bg-background', 'text-foreground', 'shadow-sm', 'font-semibold');
+          t.classList.add('text-muted-foreground');
+        });
+
+        this.setAttribute('aria-selected', 'true');
+        this.classList.add('bg-background', 'text-foreground', 'shadow-sm', 'font-semibold');
+        this.classList.remove('text-muted-foreground');
+
+        // Update content
+        document.querySelectorAll('.tabs-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.getElementById('tab-' + tabId).classList.add('active');
+      });
+    });
+
+    // Accordion functionality
+    document.querySelectorAll('[data-accordion-trigger]').forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const itemId = this.getAttribute('data-accordion-trigger');
+        const content = document.querySelector(`[data-accordion-content="${itemId}"]`);
+        const isOpen = content.classList.contains('open');
+
+        if (isOpen) {
+          content.classList.remove('open');
+          this.classList.remove('open');
+        } else {
+          content.classList.add('open');
+          this.classList.add('open');
+        }
+      });
+    });
+
+    // Simulated progress
+    let progressInterval;
+    function simulateProgress() {
+      const progressBar = document.getElementById('progress-bar');
+      const progressValue = document.getElementById('progress-value');
+      let progress = 0;
+
+      clearInterval(progressInterval);
+      progressBar.style.width = '0%';
+
+      progressInterval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(progressInterval);
+        }
+        progressBar.style.width = progress + '%';
+        progressValue.textContent = Math.round(progress) + '%';
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>

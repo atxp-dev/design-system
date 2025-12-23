@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATXP Design System - Vanilla HTML/CSS/JS</title>
+  <link rel="stylesheet" href="./dist/styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background-color: var(--theme-background);
+      color: var(--theme-foreground);
+      line-height: 1.5;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--theme-border);
+      background-color: var(--theme-background);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .theme-selector {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-selector label {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .theme-selector select {
+      padding: 0.5rem 2rem 0.5rem 0.75rem;
+      border: 1px solid var(--theme-border);
+      border-radius: 0.375rem;
+      background-color: var(--theme-background);
+      color: var(--theme-foreground);
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .theme-selector select:focus {
+      outline: none;
+      ring: 2px;
+      ring-color: var(--theme-ring);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--theme-border);
+      margin-bottom: 3rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--theme-muted-foreground);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section h3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--theme-primary);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-description {
+      color: var(--theme-muted-foreground);
+      margin-bottom: 2rem;
+    }
+
+    .component-demo {
+      background-color: var(--theme-card);
+      border: 1px solid var(--theme-border);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .component-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--theme-foreground);
+    }
+
+    .demo-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .input-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 400px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-group label {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .alert-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .code-block {
+      background-color: var(--theme-muted);
+      border: 1px solid var(--theme-border);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+    }
+
+    .code-block code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: var(--theme-foreground);
+    }
+
+    .footer {
+      border-top: 1px solid var(--theme-border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--theme-muted-foreground);
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>ATXP Design System</h1>
+    <div class="theme-selector">
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select" data-theme-control>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="atxp">ATXP</option>
+        <option value="dbg">DBG</option>
+        <option value="auto">Auto</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <h2>Vanilla HTML/CSS/JS Components</h2>
+      <p>
+        A complete collection of design system components built with pure HTML, CSS, and vanilla JavaScript.
+        No React required!
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="#showcase" class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+          View Components
+        </a>
+        <a href="https://github.com/atxp/design-system" target="_blank" class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border-2 border-border bg-background text-accent-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:bg-muted h-9 px-4 py-2">
+          View on GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- Component Showcase -->
+    <section id="showcase" class="section">
+      <h3>Component Showcase</h3>
+      <p class="section-description">
+        See how components work together in a cohesive interface.
+      </p>
+
+      <!-- Dashboard-like Example -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px;">
+
+        <!-- Header Card with Actions -->
+        <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+          <div class="flex flex-col gap-1 p-6">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <div>
+                <h3 class="text-xl font-semibold leading-7 tracking-normal text-card-foreground">Welcome Back, User!</h3>
+                <p class="text-sm font-normal leading-5 text-muted-foreground">Here's what's happening with your projects today.</p>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-success text-success-foreground">
+                  Active
+                </span>
+                <div class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden rounded-full bg-primary">
+                  <span class="font-medium text-primary-foreground">JD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Cards Row -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] p-6">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="text-sm font-medium text-muted-foreground">Total Projects</span>
+              <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-secondary text-secondary-foreground">12</span>
+            </div>
+            <div class="text-2xl font-bold">24</div>
+          </div>
+
+          <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] p-6">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="text-sm font-medium text-muted-foreground">Completed</span>
+              <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-success text-success-foreground">+3</span>
+            </div>
+            <div class="text-2xl font-bold">18</div>
+          </div>
+
+          <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] p-6">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="text-sm font-medium text-muted-foreground">In Progress</span>
+              <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground">6</span>
+            </div>
+            <div class="text-2xl font-bold">6</div>
+          </div>
+        </div>
+
+        <!-- Alert Examples -->
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="relative w-full rounded-lg border p-4 border-transparent bg-background text-foreground" style="border-left: 4px solid var(--theme-primary);">
+            <div style="display: flex; gap: 0.75rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--theme-primary);">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <div style="flex: 1;">
+                <h5 class="mb-1 font-medium leading-none tracking-tight">New Updates Available</h5>
+                <div class="text-sm opacity-90">Version 2.0 is now available with new features and improvements.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative w-full rounded-lg border p-4 border-transparent bg-success-background-fill text-foreground" style="border-left: 4px solid var(--theme-success);">
+            <div style="display: flex; gap: 0.75rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--theme-success);">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <div style="flex: 1;">
+                <h5 class="mb-1 font-medium leading-none tracking-tight">Deployment Successful</h5>
+                <div class="text-sm opacity-90">Your latest changes have been deployed to production.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Example -->
+        <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+          <div class="flex flex-col gap-1 p-6">
+            <h3 class="text-xl font-semibold leading-7 tracking-normal text-card-foreground">Quick Action</h3>
+            <p class="text-sm font-normal leading-5 text-muted-foreground">Create a new project or update settings.</p>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <form style="display: flex; flex-direction: column; gap: 1rem;">
+              <div style="display: flex; gap: 1rem;">
+                <div style="flex: 1;">
+                  <label for="project-name" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Project Name</label>
+                  <input
+                    id="project-name"
+                    type="text"
+                    placeholder="Enter project name"
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm leading-5 text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  />
+                </div>
+                <div style="flex: 1;">
+                  <label for="project-type" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Type</label>
+                  <select
+                    id="project-type"
+                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm leading-5 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    <option value="">Select type...</option>
+                    <option value="web">Web Application</option>
+                    <option value="mobile">Mobile App</option>
+                    <option value="api">API Service</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <div class="relative inline-flex items-center">
+                  <input type="checkbox" id="notify" class="peer sr-only" />
+                  <label for="notify" class="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors cursor-pointer peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="hidden peer-checked:block">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </label>
+                </div>
+                <label for="notify" style="font-size: 0.875rem; cursor: pointer;">Send me notifications about this project</label>
+              </div>
+            </form>
+          </div>
+          <div class="flex items-center justify-end gap-2 px-6 pb-6 pt-0">
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-foreground hover:bg-muted h-9 px-4 py-2">
+              Cancel
+            </button>
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+              Create Project
+            </button>
+          </div>
+        </div>
+
+        <!-- Button Variants Row -->
+        <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] p-6">
+          <h4 style="font-weight: 600; margin-bottom: 1rem;">Available Actions</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+              Primary Action
+            </button>
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-secondary text-secondary-foreground hover:brightness-95 h-9 px-4 py-2">
+              Secondary
+            </button>
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border-2 border-border bg-background text-accent-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:bg-muted h-9 px-4 py-2">
+              Outline
+            </button>
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-foreground hover:bg-muted h-9 px-4 py-2">
+              Ghost
+            </button>
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-9 px-4 py-2">
+              Destructive
+            </button>
+            <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-success text-success-foreground hover:bg-success/90 h-9 px-4 py-2">
+              Success
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Detailed Component Pages -->
+    <section class="section">
+      <h3>Detailed Component Examples</h3>
+      <p class="section-description">
+        Explore comprehensive examples of each component type with detailed usage patterns.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-width: 900px;">
+        <a href="components/button.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">Buttons</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">All button variants, sizes, and states</div>
+        </a>
+
+        <a href="components/card.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">Cards</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Card layouts with headers and footers</div>
+        </a>
+
+        <a href="components/input.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">Inputs</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Text inputs with icons and validation</div>
+        </a>
+
+        <a href="components/alert.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">Alerts</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Notification and message components</div>
+        </a>
+
+        <a href="components/dialog.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">Dialogs</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Modal dialogs with overlays</div>
+        </a>
+
+        <a href="components/forms.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">Forms</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Checkboxes, radios, selects, textareas</div>
+        </a>
+
+        <a href="components/ui-elements.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">UI Elements</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Badges, avatars, and separators</div>
+        </a>
+
+        <a href="components/interactive.html" class="rounded-lg border border-border bg-card p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--theme-foreground);">Interactive</div>
+          <div style="font-size: 0.875rem; color: var(--theme-muted-foreground);">Tabs, accordions, progress, skeletons</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section id="getting-started" class="section">
+      <h3>Getting Started</h3>
+      <p class="section-description">
+        Quick guide to using the vanilla components in your project.
+      </p>
+
+      <div class="component-demo">
+        <div class="component-title">1. Include the CSS</div>
+        <div class="code-block">
+          <code>&lt;link rel="stylesheet" href="path/to/dist/styles.css"&gt;</code>
+        </div>
+
+        <div class="component-title" style="margin-top: 2rem;">2. Include the JavaScript (for interactive components)</div>
+        <div class="code-block">
+          <code>&lt;script src="path/to/vanilla/js/components.js"&gt;&lt;/script&gt;</code>
+        </div>
+
+        <div class="component-title" style="margin-top: 2rem;">3. Use the components</div>
+        <div class="code-block">
+          <code>&lt;button class="inline-flex items-center justify-center ... bg-primary text-primary-foreground ..."&gt;<br>
+  Click Me<br>
+&lt;/button&gt;</code>
+        </div>
+
+        <div class="component-title" style="margin-top: 2rem;">4. Set the theme</div>
+        <div class="code-block">
+          <code>&lt;html data-theme="light"&gt; &lt;!-- or dark, atxp, dbg, auto --&gt;</code>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Demo Dialog -->
+  <div id="demo-dialog" data-dialog-id="demo-dialog" style="display: none;">
+    <div class="fixed inset-0 z-50 flex items-center justify-center" data-dialog-overlay>
+      <div class="fixed inset-0 bg-black/80" aria-hidden="true"></div>
+      <div
+        data-dialog-content
+        role="dialog"
+        aria-modal="true"
+        class="relative z-50 flex w-[512px] flex-col gap-4 overflow-hidden rounded-lg border border-border bg-background p-6 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-2px_rgba(0,0,0,0.05)]"
+      >
+        <button
+          data-dialog-close
+          class="absolute right-[15px] top-[15px] rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Close"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <div class="flex flex-col gap-1.5">
+          <h2 class="text-lg font-semibold leading-7 text-foreground">Welcome to ATXP Design System</h2>
+          <p class="text-sm leading-5 text-muted-foreground">This is a demo dialog component.</p>
+        </div>
+
+        <div>
+          <p>This dialog demonstrates the interactive capabilities of the vanilla JavaScript components. You can close it by clicking the X button, clicking outside, or pressing ESC.</p>
+        </div>
+
+        <div class="flex items-center justify-end gap-2">
+          <button
+            data-dialog-close
+            class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2"
+          >
+            Got it!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 ATXP Design System. Built with HTML, CSS, and vanilla JavaScript.</p>
+    <p style="margin-top: 0.5rem;">
+      <strong>Component Examples:</strong><br>
+      <a href="components/button.html" style="color: var(--theme-primary); text-decoration: underline;">Buttons</a> •
+      <a href="components/card.html" style="color: var(--theme-primary); text-decoration: underline;">Cards</a> •
+      <a href="components/input.html" style="color: var(--theme-primary); text-decoration: underline;">Inputs</a> •
+      <a href="components/alert.html" style="color: var(--theme-primary); text-decoration: underline;">Alerts</a> •
+      <a href="components/dialog.html" style="color: var(--theme-primary); text-decoration: underline;">Dialogs</a> •
+      <a href="components/forms.html" style="color: var(--theme-primary); text-decoration: underline;">Forms</a> •
+      <a href="components/ui-elements.html" style="color: var(--theme-primary); text-decoration: underline;">UI Elements</a> •
+      <a href="components/interactive.html" style="color: var(--theme-primary); text-decoration: underline;">Interactive</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/components.js"></script>
+</body>
+</html>

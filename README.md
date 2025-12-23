@@ -149,6 +149,87 @@ function MyCustomComponent() {
 
 **Note**: This is completely optional. The design system components work perfectly without any Tailwind setup in your project.
 
+## Vanilla HTML/CSS/JS Version
+
+Can't use React? **We've got you covered!** The ATXP Design System includes a complete vanilla HTML/CSS/JavaScript version of all components for projects that can't use React.
+
+### Quick Start
+
+```html
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Include the compiled CSS -->
+  <link rel="stylesheet" href="node_modules/@atxp/design-system/dist/styles.css">
+</head>
+<body>
+  <!-- Use components with pure HTML -->
+  <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+    Click Me
+  </button>
+
+  <!-- Include vanilla JS for interactive components (optional) -->
+  <script src="node_modules/@atxp/design-system/vanilla/js/components.js"></script>
+</body>
+</html>
+```
+
+### Available Components
+
+The vanilla version includes 20+ components:
+
+- **Form Components**: Checkbox, Radio, Select, Textarea, Input
+- **UI Elements**: Badge, Avatar, Separator
+- **Interactive**: Tabs, Accordion, Progress, Skeleton
+- **Layout**: Button, Card, Alert, Dialog, Toast
+
+### Features
+
+- ✅ **Zero Dependencies** - Just HTML, CSS, and vanilla JavaScript
+- ✅ **All 4 Themes** - Light, Dark, ATXP, DBG with live switching
+- ✅ **Fully Accessible** - ARIA labels, keyboard navigation, screen reader support
+- ✅ **Same Design** - Matches the React version pixel-perfect
+- ✅ **Interactive Components** - Dialog, Tabs, Accordion, Toast with vanilla JS
+
+### Documentation
+
+- **Main Guide**: [`vanilla/README.md`](./vanilla/README.md)
+- **Live Examples**: Open [`vanilla/index.html`](./vanilla/index.html) in your browser
+- **Component Pages**:
+  - [`vanilla/components/forms.html`](./vanilla/components/forms.html) - Complete form elements
+  - [`vanilla/components/ui-elements.html`](./vanilla/components/ui-elements.html) - Badges, avatars, separators
+  - [`vanilla/components/interactive.html`](./vanilla/components/interactive.html) - Tabs, accordions, progress
+  - And more individual component examples
+
+### Theme Switching
+
+```html
+<!-- Add theme selector -->
+<select data-theme-control>
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="atxp">ATXP</option>
+  <option value="dbg">DBG</option>
+</select>
+
+<!-- JavaScript handles theme switching automatically -->
+<script src="vanilla/js/components.js"></script>
+```
+
+### Extraction Tool
+
+Keep vanilla components in sync with React:
+
+```bash
+# Extract a single component's classes
+node vanilla/extract-components.cjs Button
+
+# Extract all components
+node vanilla/extract-components.cjs --all
+```
+
+See [`vanilla/README.md`](./vanilla/README.md) for complete documentation, examples, and JavaScript API reference.
+
 ## Development
 
 ### Prerequisites
