@@ -8,17 +8,34 @@ set -e
 echo "🚀 Building ATXP Design System - Vanilla Version"
 echo "================================================"
 
+# Detect if we're in the vanilla directory or the repo root
+if [ -f "package.json" ]; then
+  # We're in the repo root (e.g., Render deployment)
+  REPO_ROOT="$(pwd)"
+  VANILLA_DIR="$(pwd)/vanilla"
+elif [ -f "../package.json" ]; then
+  # We're in the vanilla directory (e.g., local development)
+  REPO_ROOT="$(cd .. && pwd)"
+  VANILLA_DIR="$(pwd)"
+else
+  echo "❌ Error: Cannot find package.json. Please run from repo root or vanilla directory."
+  exit 1
+fi
+
+echo "📍 Repository root: $REPO_ROOT"
+echo "📍 Vanilla directory: $VANILLA_DIR"
+
 # Step 1: Build the main design system (generates dist/styles.css)
 echo "📦 Step 1: Building design system..."
-cd ..
+cd "$REPO_ROOT"
 pnpm build:css
 pnpm build
-cd vanilla
 
 # Step 2: Copy dist/ into vanilla/dist/
 echo "📁 Step 2: Copying dist/ files into vanilla..."
+cd "$VANILLA_DIR"
 rm -rf dist
-cp -r ../dist ./dist
+cp -r "$REPO_ROOT/dist" ./dist
 
 # Step 3: Update all references from ../dist to ./dist
 echo "🔄 Step 3: Updating file references..."
@@ -60,14 +77,21 @@ tar -czf "$ARCHIVE_NAME" "$TEMP_DIR"
 # Clean up temp directory
 rm -rf "$TEMP_DIR"
 
+# Get sizes for output (works from vanilla directory)
+DIST_SIZE=$(du -sh dist 2>/dev/null | cut -f1)
+HTML_COUNT=$(ls -1 *.html 2>/dev/null | wc -l | tr -d ' ')
+COMPONENT_COUNT=$(ls -1 components/*.html 2>/dev/null | wc -l | tr -d ' ')
+JS_COUNT=$(ls -1 js/*.js 2>/dev/null | wc -l | tr -d ' ')
+ARCHIVE_SIZE=$(du -sh "$ARCHIVE_NAME" 2>/dev/null | cut -f1)
+
 echo "✅ Build complete!"
 echo ""
 echo "📊 Build output:"
-echo "   - vanilla/dist/ ($(du -sh dist 2>/dev/null | cut -f1) - CSS and assets)"
-echo "   - vanilla/*.html ($(ls -1 *.html | wc -l | tr -d ' ') files)"
-echo "   - vanilla/components/*.html ($(ls -1 components/*.html 2>/dev/null | wc -l | tr -d ' ') files)"
-echo "   - vanilla/js/*.js ($(ls -1 js/*.js 2>/dev/null | wc -l | tr -d ' ') file)"
-echo "   - $ARCHIVE_NAME ($(du -sh $ARCHIVE_NAME 2>/dev/null | cut -f1))"
+echo "   - vanilla/dist/ ($DIST_SIZE - CSS and assets)"
+echo "   - vanilla/*.html ($HTML_COUNT files)"
+echo "   - vanilla/components/*.html ($COMPONENT_COUNT files)"
+echo "   - vanilla/js/*.js ($JS_COUNT file)"
+echo "   - $ARCHIVE_NAME ($ARCHIVE_SIZE)"
 echo ""
-echo "🌐 Site ready for deployment from ./vanilla directory"
-echo "📥 Download archive: ./$ARCHIVE_NAME"
+echo "🌐 Site ready for deployment from $VANILLA_DIR directory"
+echo "📥 Download archive: $VANILLA_DIR/$ARCHIVE_NAME"
