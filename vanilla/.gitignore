@@ -1,0 +1,14 @@
+# Build artifacts
+dist/
+*.tar.gz
+*.zip
+
+# Backup files
+*.bak
+*~
+
+# Extracted component data
+extracted/
+
+# OS files
+.DS_Store

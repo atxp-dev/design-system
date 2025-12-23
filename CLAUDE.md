@@ -41,6 +41,23 @@ mcp__figma__get_design_context({
 
 **Patterns**: Use native HTML elements, `.sr-only` for accessibility, `peer-*` modifiers for state styling, design tokens (`border-primary`, `bg-background`), avoid Radix UI unless complex state needed
 
+5. **Update Vanilla Components** (IMPORTANT):
+   - Extract component classes: `node vanilla/extract-components.cjs ComponentName`
+   - Update relevant vanilla HTML files in `vanilla/components/`
+   - If new component: Create new `.html` file with examples
+   - If modified component: Update existing examples to match new styles/variants
+   - Add component to `vanilla/index.html` showcase if not already present
+   - Update `vanilla/README.md` with new component documentation
+   - Test: Open HTML files in browser, verify styling matches React version
+
+**Vanilla Component Files**:
+- `vanilla/components/forms.html` - Checkbox, Radio, Select, Textarea
+- `vanilla/components/ui-elements.html` - Badge, Avatar, Separator
+- `vanilla/components/interactive.html` - Tabs, Accordion, Progress, Skeleton
+- `vanilla/components/button.html`, `card.html`, `input.html`, `alert.html`, `dialog.html`
+
+**Important**: The vanilla HTML/CSS/JS version must stay in sync with React components for consistency across frameworks.
+
 ---
 
 ## Adding a New Theme

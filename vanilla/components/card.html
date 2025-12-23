@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Component - ATXP Design System</title>
+  <link rel="stylesheet" href="../../dist/styles.css">
+  <style>
+    body {
+      padding: 2rem;
+      font-family: Inter, system-ui, sans-serif;
+      background-color: var(--theme-background);
+      color: var(--theme-foreground);
+    }
+    .demo-section {
+      margin-bottom: 2rem;
+    }
+    .demo-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-bottom: 2rem; font-size: 2rem; font-weight: bold;">Card Component</h1>
+
+  <!-- Basic Card -->
+  <div class="demo-section">
+    <h2>Basic Card</h2>
+    <div class="card-grid">
+      <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col gap-1 p-6">
+          <h3 class="text-xl font-semibold leading-7 tracking-normal text-card-foreground">Card Title</h3>
+          <p class="text-sm font-normal leading-5 text-muted-foreground">Card Description</p>
+        </div>
+        <div class="px-6 pb-6 pt-0">
+          <p>This is the card content. You can put any content here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card with Footer -->
+  <div class="demo-section">
+    <h2>Card with Footer</h2>
+    <div class="card-grid">
+      <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col gap-1 p-6">
+          <h3 class="text-xl font-semibold leading-7 tracking-normal text-card-foreground">Create Project</h3>
+          <p class="text-sm font-normal leading-5 text-muted-foreground">Deploy your new project in one click.</p>
+        </div>
+        <div class="px-6 pb-6 pt-0">
+          <form>
+            <div class="mb-4">
+              <label for="project-name" class="block text-sm font-medium mb-2">Project Name</label>
+              <input
+                id="project-name"
+                type="text"
+                placeholder="Enter project name"
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm leading-5 text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="flex items-center justify-end gap-2 px-6 pb-6 pt-0">
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-foreground hover:bg-muted h-9 px-4 py-2">
+            Cancel
+          </button>
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+            Deploy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multiple Cards -->
+  <div class="demo-section">
+    <h2>Multiple Cards</h2>
+    <div class="card-grid">
+      <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col gap-1 p-6">
+          <h3 class="text-xl font-semibold leading-7 tracking-normal text-card-foreground">Notifications</h3>
+          <p class="text-sm font-normal leading-5 text-muted-foreground">You have 3 unread messages.</p>
+        </div>
+        <div class="px-6 pb-6 pt-0">
+          <p>Click the button below to view all notifications.</p>
+        </div>
+        <div class="flex items-center justify-end gap-2 px-6 pb-6 pt-0">
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+            View All
+          </button>
+        </div>
+      </div>
+
+      <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col gap-1 p-6">
+          <h3 class="text-xl font-semibold leading-7 tracking-normal text-card-foreground">Team Members</h3>
+          <p class="text-sm font-normal leading-5 text-muted-foreground">Invite your team to collaborate.</p>
+        </div>
+        <div class="px-6 pb-6 pt-0">
+          <p>Manage your team members and their roles.</p>
+        </div>
+        <div class="flex items-center justify-end gap-2 px-6 pb-6 pt-0">
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-border bg-background text-accent-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:bg-muted h-9 px-4 py-2">
+            Invite
+          </button>
+        </div>
+      </div>
+
+      <div class="rounded-lg border border-border bg-card text-card-foreground shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col gap-1 p-6">
+          <h3 class="text-xl font-semibold leading-7 tracking-normal text-card-foreground">Settings</h3>
+          <p class="text-sm font-normal leading-5 text-muted-foreground">Configure your preferences.</p>
+        </div>
+        <div class="px-6 pb-6 pt-0">
+          <p>Customize your application settings and preferences.</p>
+        </div>
+        <div class="flex items-center justify-end gap-2 px-6 pb-6 pt-0">
+          <button class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:brightness-95 h-9 px-4 py-2">
+            Configure
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

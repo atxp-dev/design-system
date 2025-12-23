@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Components - ATXP Design System</title>
+  <link rel="stylesheet" href="../../dist/styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Inter, system-ui, sans-serif;
+      background-color: var(--theme-background);
+      color: var(--theme-foreground);
+    }
+    .demo-section {
+      margin-bottom: 3rem;
+    }
+    .demo-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .demo-section p {
+      color: var(--theme-muted-foreground);
+      margin-bottom: 1.5rem;
+    }
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 500px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group label {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .checkbox-item, .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-bottom: 2rem; font-size: 2rem; font-weight: bold;">Form Components</h1>
+
+  <!-- Checkbox -->
+  <section class="demo-section">
+    <h2>Checkbox</h2>
+    <p>Checkboxes for selecting multiple options.</p>
+
+    <div class="checkbox-group">
+      <!-- Checkbox Item 1 -->
+      <div class="checkbox-item">
+        <div class="relative inline-flex items-center">
+          <input
+            type="checkbox"
+            id="checkbox-1"
+            class="peer sr-only"
+          />
+          <label
+            for="checkbox-1"
+            class="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors cursor-pointer peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden peer-checked:block">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </label>
+        </div>
+        <label for="checkbox-1" class="text-sm cursor-pointer">Accept terms and conditions</label>
+      </div>
+
+      <!-- Checkbox Item 2 -->
+      <div class="checkbox-item">
+        <div class="relative inline-flex items-center">
+          <input
+            type="checkbox"
+            id="checkbox-2"
+            class="peer sr-only"
+            checked
+          />
+          <label
+            for="checkbox-2"
+            class="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors cursor-pointer peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden peer-checked:block">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </label>
+        </div>
+        <label for="checkbox-2" class="text-sm cursor-pointer">Enable notifications</label>
+      </div>
+
+      <!-- Checkbox Item 3 (Disabled) -->
+      <div class="checkbox-item">
+        <div class="relative inline-flex items-center">
+          <input
+            type="checkbox"
+            id="checkbox-3"
+            class="peer sr-only"
+            disabled
+          />
+          <label
+            for="checkbox-3"
+            class="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden peer-checked:block">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </label>
+        </div>
+        <label for="checkbox-3" class="text-sm opacity-50">Disabled option</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Radio Buttons -->
+  <section class="demo-section">
+    <h2>Radio Buttons</h2>
+    <p>Radio buttons for selecting a single option from a group.</p>
+
+    <div class="radio-group">
+      <!-- Radio Item 1 -->
+      <div class="radio-item">
+        <div class="relative inline-flex items-center">
+          <input
+            type="radio"
+            id="radio-1"
+            name="notify-method"
+            class="peer sr-only"
+            checked
+          />
+          <label
+            for="radio-1"
+            class="relative flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-primary bg-background transition-colors cursor-pointer peer-checked:border-primary peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 after:absolute after:inset-0 after:m-auto after:h-2 after:w-2 after:rounded-full after:bg-primary after:scale-0 after:transition-transform peer-checked:after:scale-100"
+          ></label>
+        </div>
+        <label for="radio-1" class="text-sm cursor-pointer">Email</label>
+      </div>
+
+      <!-- Radio Item 2 -->
+      <div class="radio-item">
+        <div class="relative inline-flex items-center">
+          <input
+            type="radio"
+            id="radio-2"
+            name="notify-method"
+            class="peer sr-only"
+          />
+          <label
+            for="radio-2"
+            class="relative flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-primary bg-background transition-colors cursor-pointer peer-checked:border-primary peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 after:absolute after:inset-0 after:m-auto after:h-2 after:w-2 after:rounded-full after:bg-primary after:scale-0 after:transition-transform peer-checked:after:scale-100"
+          ></label>
+        </div>
+        <label for="radio-2" class="text-sm cursor-pointer">SMS</label>
+      </div>
+
+      <!-- Radio Item 3 -->
+      <div class="radio-item">
+        <div class="relative inline-flex items-center">
+          <input
+            type="radio"
+            id="radio-3"
+            name="notify-method"
+            class="peer sr-only"
+          />
+          <label
+            for="radio-3"
+            class="relative flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-primary bg-background transition-colors cursor-pointer peer-checked:border-primary peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 after:absolute after:inset-0 after:m-auto after:h-2 after:w-2 after:rounded-full after:bg-primary after:scale-0 after:transition-transform peer-checked:after:scale-100"
+          ></label>
+        </div>
+        <label for="radio-3" class="text-sm cursor-pointer">Push Notification</label>
+      </div>
+
+      <!-- Radio Item 4 (Disabled) -->
+      <div class="radio-item">
+        <div class="relative inline-flex items-center">
+          <input
+            type="radio"
+            id="radio-4"
+            name="notify-method"
+            class="peer sr-only"
+            disabled
+          />
+          <label
+            for="radio-4"
+            class="relative flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-primary bg-background transition-colors peer-checked:border-primary peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 after:absolute after:inset-0 after:m-auto after:h-2 after:w-2 after:rounded-full after:bg-primary after:scale-0 after:transition-transform peer-checked:after:scale-100"
+          ></label>
+        </div>
+        <label for="radio-4" class="text-sm opacity-50">Disabled option</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Textarea -->
+  <section class="demo-section">
+    <h2>Textarea</h2>
+    <p>Multi-line text input for longer content.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="textarea-1">Message</label>
+        <textarea
+          id="textarea-1"
+          placeholder="Type your message here..."
+          class="flex min-h-[82px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="textarea-2">Bio</label>
+        <textarea
+          id="textarea-2"
+          placeholder="Tell us about yourself..."
+          rows="4"
+          class="flex min-h-[82px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >I'm a software developer passionate about creating beautiful user interfaces.</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="textarea-3">Disabled</label>
+        <textarea
+          id="textarea-3"
+          disabled
+          placeholder="This textarea is disabled"
+          class="flex min-h-[82px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        ></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- Select (Native) -->
+  <section class="demo-section">
+    <h2>Select</h2>
+    <p>Dropdown select for choosing from a list of options.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="select-1">Country</label>
+        <select
+          id="select-1"
+          class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">Select a country...</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="ca">Canada</option>
+          <option value="au">Australia</option>
+          <option value="de">Germany</option>
+          <option value="fr">France</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="select-2">Language</label>
+        <select
+          id="select-2"
+          class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="en">English</option>
+          <option value="es" selected>Spanish</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <option value="it">Italian</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="select-3">Disabled</label>
+        <select
+          id="select-3"
+          disabled
+          class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">This select is disabled</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Form Example -->
+  <section class="demo-section">
+    <h2>Complete Form Example</h2>
+    <p>All form components working together.</p>
+
+    <form class="form-grid" style="max-width: 600px;">
+      <div class="form-group">
+        <label for="form-name">Full Name</label>
+        <input
+          id="form-name"
+          type="text"
+          placeholder="John Doe"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm leading-5 text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="form-email">Email</label>
+        <input
+          id="form-email"
+          type="email"
+          placeholder="john@example.com"
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm leading-5 text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="form-country">Country</label>
+        <select
+          id="form-country"
+          class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >
+          <option value="">Select...</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="ca">Canada</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Notification Preferences</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <div class="relative inline-flex items-center">
+              <input type="checkbox" id="form-notify-email" class="peer sr-only" checked />
+              <label for="form-notify-email" class="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors cursor-pointer peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden peer-checked:block">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </label>
+            </div>
+            <label for="form-notify-email" class="text-sm cursor-pointer">Email notifications</label>
+          </div>
+          <div class="checkbox-item">
+            <div class="relative inline-flex items-center">
+              <input type="checkbox" id="form-notify-sms" class="peer sr-only" />
+              <label for="form-notify-sms" class="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors cursor-pointer peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden peer-checked:block">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </label>
+            </div>
+            <label for="form-notify-sms" class="text-sm cursor-pointer">SMS notifications</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="form-message">Message</label>
+        <textarea
+          id="form-message"
+          placeholder="Tell us about yourself..."
+          class="flex min-h-[82px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        ></textarea>
+      </div>
+
+      <div class="checkbox-item">
+        <div class="relative inline-flex items-center">
+          <input type="checkbox" id="form-terms" class="peer sr-only" />
+          <label for="form-terms" class="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors cursor-pointer peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden peer-checked:block">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </label>
+        </div>
+        <label for="form-terms" class="text-sm cursor-pointer">I agree to the terms and conditions</label>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+        <button type="button" class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-foreground hover:bg-muted h-9 px-4 py-2">
+          Cancel
+        </button>
+        <button type="submit" class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg text-sm font-medium leading-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2">
+          Submit
+        </button>
+      </div>
+    </form>
+  </section>
+
+</body>
+</html>
